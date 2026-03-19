@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dead-strike.com/sitemap.xml
