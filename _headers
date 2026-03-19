@@ -6,8 +6,14 @@
 /favicon.svg
   Cache-Control: public, max-age=604800
 
-/styles.css
+/site.css
   Cache-Control: public, max-age=604800
 
-/script.js
+/site.js
   Cache-Control: public, max-age=604800
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=604800
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
