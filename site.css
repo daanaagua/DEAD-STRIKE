@@ -513,6 +513,20 @@ button {
   align-items: start;
 }
 
+.home-stage {
+  padding-top: 30px;
+}
+
+.home-focus-grid {
+  grid-template-columns: minmax(0, 1.52fr) minmax(280px, 0.48fr);
+}
+
+.home-main-column,
+.home-sidebar {
+  display: grid;
+  gap: 16px;
+}
+
 .player-shell {
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -530,6 +544,53 @@ button {
 
 .player-shell.portrait {
   max-width: 560px;
+}
+
+.home-game-bar {
+  display: grid;
+  gap: 16px;
+}
+
+.home-game-bar-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.home-game-title {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.home-button-row {
+  margin-top: 0;
+  justify-content: end;
+}
+
+.home-chip-row {
+  gap: 10px;
+}
+
+.compact-meta-grid {
+  gap: 12px;
+}
+
+.sidebar-head {
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar-game-card {
+  gap: 12px;
+}
+
+.sidebar-game-card .list-media {
+  aspect-ratio: 16 / 9;
 }
 
 .player-aside {
@@ -623,6 +684,7 @@ button {
   .hero,
   .page-hero,
   .player-grid,
+  .home-focus-grid,
   .article-grid,
   .category-grid,
   .card-grid,
@@ -638,6 +700,10 @@ button {
   .player-shell,
   .player-shell.portrait {
     max-width: none;
+  }
+
+  .home-button-row {
+    justify-content: start;
   }
 }
 
@@ -665,6 +731,7 @@ button {
   }
 
   .section-heading,
+  .home-game-bar-top,
   .footer {
     flex-direction: column;
     align-items: start;
@@ -710,12 +777,14 @@ button {
   }
 
   .hero-actions,
-  .button-row {
+  .button-row,
+  .home-button-row {
     width: 100%;
   }
 
   .hero-actions > *,
-  .button-row > * {
+  .button-row > *,
+  .home-button-row > * {
     flex: 1 1 100%;
   }
 }

@@ -126,92 +126,102 @@
     </header>
 
     <main class="shell">
-      <section class="page-hero">
-        <div class="page-copy">
-          <p class="eyebrow">Instant-play homepage</p>
-          <h1>DEAD STRIKE starts firing the second players land.</h1>
-          <p>
-            I rebuilt the homepage around the part of the slope-rider playbook that matters most:
-            direct gameplay first, supporting copy second, and related internal links underneath.
-            Players now hit a game-first landing page instead of a directory-first homepage.
-          </p>
-          <div class="chip-row">
-            <span>Zombie FPS</span>
-            <span>Instant play</span>
-            <span>Fullscreen</span>
-            <span>Related shooters</span>
-          </div>
-          <div class="button-row">
-            <a class="button button-primary" href="#play">Play DEAD STRIKE</a>
-            <button class="button button-ghost" type="button" data-fullscreen-target="#playerShell">Fullscreen</button>
-            <a class="button button-ghost" href="https://html5.gamemonetize.co/tq813m1zcpoha7zigujhmy9f08idwlab/" target="_blank" rel="noreferrer">Open Source Tab</a>
-          </div>
-        </div>
+      <section id="play" class="section home-stage">
+        <div class="player-grid home-focus-grid">
+          <div class="home-main-column">
+            <div class="player-shell" id="playerShell">
+              <iframe
+                class="player-frame"
+                title="DEAD STRIKE"
+                src="https://html5.gamemonetize.co/tq813m1zcpoha7zigujhmy9f08idwlab/"
+                loading="eager"
+                allow="fullscreen *; gamepad *"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
 
-        <aside class="panel">
-          <p class="eyebrow">Mission intel</p>
-          <h2 class="panel-title">Featured operation</h2>
-          <dl class="meta-grid">
-            <div class="meta-item">
-              <dt>Base game</dt>
-              <dd>Modern FPS Strike</dd>
-            </div>
-            <div class="meta-item">
-              <dt>Publisher</dt>
-              <dd>Artis Web</dd>
-            </div>
-            <div class="meta-item">
-              <dt>Canvas</dt>
-              <dd>1920 x 1080</dd>
-            </div>
-            <div class="meta-item">
-              <dt>Mobile</dt>
-              <dd>Yes</dd>
-            </div>
-          </dl>
-        </aside>
-      </section>
+            <div class="panel home-game-bar">
+              <div class="home-game-bar-top">
+                <div>
+                  <p class="eyebrow">Featured game</p>
+                  <h1 class="home-game-title">DEAD STRIKE</h1>
+                </div>
+                <div class="button-row home-button-row">
+                  <button class="button button-ghost button-small" type="button" data-fullscreen-target="#playerShell">Fullscreen</button>
+                  <a class="button button-small" href="https://html5.gamemonetize.co/tq813m1zcpoha7zigujhmy9f08idwlab/" target="_blank" rel="noreferrer">Open Source Tab</a>
+                </div>
+              </div>
 
-      <section id="play" class="section">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Play now</p>
-            <h2>Launch directly into the mission</h2>
-          </div>
-        </div>
+              <div class="chip-row home-chip-row">
+                <span>Zombie FPS</span>
+                <span>Instant play</span>
+                <span>Mobile ready</span>
+                <span>Fullscreen</span>
+              </div>
 
-        <div class="player-grid">
-          <div class="player-shell" id="playerShell">
-            <iframe
-              class="player-frame"
-              title="DEAD STRIKE"
-              src="https://html5.gamemonetize.co/tq813m1zcpoha7zigujhmy9f08idwlab/"
-              loading="eager"
-              allow="fullscreen *; gamepad *"
-              referrerpolicy="strict-origin-when-cross-origin"
-            ></iframe>
-          </div>
-
-          <aside class="player-aside">
-            <div class="aside-block">
-              <p class="aside-label">Mission briefing</p>
-              <p class="aside-copy">
-                Fight through browser-based zombie firefights with modern weapons, quick restart pacing,
-                and the shortest possible path from landing page to gameplay.
-              </p>
-            </div>
-            <div class="aside-block">
-              <p class="aside-label">Controls</p>
-              <p>Mouse click or tap to play.</p>
-            </div>
-            <div class="aside-block">
-              <p class="aside-label">Related routes</p>
-              <div class="inline-links">
-                <a href="/">Featured game</a>
-                <a href="/games/zombie-games/">Zombie Games</a>
-                <a href="/games/fps-games/">FPS Games</a>
+              <div class="meta-grid compact-meta-grid">
+                <div class="meta-item">
+                  <dt>Publisher</dt>
+                  <dd>Artis Web</dd>
+                </div>
+                <div class="meta-item">
+                  <dt>Canvas</dt>
+                  <dd>1920 x 1080</dd>
+                </div>
+                <div class="meta-item">
+                  <dt>Controls</dt>
+                  <dd>Mouse click or tap</dd>
+                </div>
+                <div class="meta-item">
+                  <dt>Category</dt>
+                  <dd>Zombie / FPS</dd>
+                </div>
               </div>
             </div>
+          </div>
+
+          <aside class="player-aside home-sidebar">
+            <div class="panel sidebar-head">
+              <p class="eyebrow">Related games</p>
+              <h2 class="panel-title">Keep playing</h2>
+              <div class="chip-row home-chip-row">
+                <span>Zombie</span>
+                <span>FPS</span>
+                <span>Shooter</span>
+              </div>
+            </div>
+
+            <a class="list-card sidebar-game-card" href="/fps-shooting-survival-sim/">
+              <div class="list-media" style="background-image:url('https://img.gamemonetize.com/5rxwjnl6kc368x7uqdc6kzwx0do1731k/512x384.jpg')"></div>
+              <div>
+                <h3>FPS Shooting Survival Sim</h3>
+                <p>Desktop zombie survival with stronger keyboard-and-mouse pacing.</p>
+              </div>
+            </a>
+
+            <a class="list-card sidebar-game-card" href="/zombie-survival-last-stand/">
+              <div class="list-media" style="background-image:url('https://img.gamemonetize.com/o6w1t7bn7a9nw6jv4sny1sag7jsutbfu/512x384.jpg')"></div>
+              <div>
+                <h3>Zombie Survival : Last Stand</h3>
+                <p>Heavier horror pressure and tighter survival controls.</p>
+              </div>
+            </a>
+
+            <a class="list-card sidebar-game-card" href="/sniper-master/">
+              <div class="list-media" style="background-image:url('https://img.gamemonetize.com/0gus8yum52pw2fq3mjc3dp1idx4p1pm3/512x384.jpg')"></div>
+              <div>
+                <h3>Sniper Master</h3>
+                <p>Precision shooting for players who want a cleaner action break.</p>
+              </div>
+            </a>
+
+            <a class="list-card sidebar-game-card" href="/games/">
+              <div class="list-media" style="background-image:url('https://img.gamemonetize.com/tq813m1zcpoha7zigujhmy9f08idwlab/512x384.jpg')"></div>
+              <div>
+                <h3>Browse All Games</h3>
+                <p>Open the directory for category hubs and every game page on the site.</p>
+              </div>
+            </a>
           </aside>
         </div>
       </section>
@@ -219,16 +229,16 @@
       <section class="section">
         <div class="article-grid">
           <article class="article-card">
-            <h3>Why the homepage now opens with gameplay</h3>
+            <h3>About DEAD STRIKE</h3>
             <p>
-              This is the strongest conversion lesson from successful single-game sites: if the domain is built around one lead game,
-              the homepage should act like the primary game page and let players start immediately.
+              DEAD STRIKE is built as a game-first browser landing page. Players hit the playable area immediately,
+              while the descriptive content sits lower on the page for scrolling users and SEO coverage.
             </p>
           </article>
           <article class="article-card">
-            <h3>What still supports SEO</h3>
+            <h3>How the homepage is structured</h3>
             <p>
-              Even with gameplay first, the homepage still keeps structured data, category links, related titles, and FAQ content so the page remains indexable and useful.
+              The top of the page is now game plus related sidebar, which matches the stronger conversion logic from slope-rider. The introduction, categories, and FAQ now sit below the fold.
             </p>
           </article>
         </div>
