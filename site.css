@@ -707,6 +707,39 @@ button {
   gap: 20px;
 }
 
+.player-aside.home-sidebar {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-content: start;
+}
+
+.player-aside.home-sidebar .sidebar-head {
+  grid-column: 1 / -1;
+}
+
+.player-aside.home-sidebar .sidebar-game-card {
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 8px;
+  padding: 12px;
+}
+
+.player-aside.home-sidebar .sidebar-game-card .list-media {
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  border-radius: 16px;
+}
+
+.player-aside.home-sidebar .sidebar-game-card h3 {
+  font-size: 0.82rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.player-aside.home-sidebar .sidebar-game-card p {
+  display: none;
+}
+
 .arcade-frame-card {
   display: grid;
   gap: 16px;
@@ -942,6 +975,14 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .player-aside.home-sidebar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .player-aside.home-sidebar .sidebar-head {
+    grid-column: 1 / -1;
+  }
+
   .arcade-player-shell,
   .arcade-player-frame {
     min-height: 580px;
@@ -1012,6 +1053,10 @@ button {
     min-height: 500px;
   }
 
+  .player-aside.home-sidebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .icon-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1053,6 +1098,10 @@ button {
   .arcade-player-shell,
   .arcade-player-frame {
     min-height: 360px;
+  }
+
+  .player-aside.home-sidebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .icon-grid {
