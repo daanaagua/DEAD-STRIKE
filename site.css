@@ -509,7 +509,7 @@ button {
 }
 
 .player-grid {
-  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+  grid-template-columns: minmax(0, 1fr) clamp(190px, 20vw, 240px);
   align-items: start;
 }
 
@@ -518,7 +518,7 @@ button {
 }
 
 .home-focus-grid {
-  grid-template-columns: minmax(0, 1.52fr) minmax(280px, 0.48fr);
+  grid-template-columns: minmax(0, 1fr) clamp(190px, 20vw, 240px);
 }
 
 .home-main-column,
@@ -531,13 +531,13 @@ button {
   border-radius: var(--radius-xl);
   overflow: hidden;
   padding: 0;
-  min-height: 560px;
+  min-height: 640px;
 }
 
 .player-frame {
   width: 100%;
   aspect-ratio: var(--frame-ratio, 16 / 9);
-  min-height: 560px;
+  min-height: 640px;
   border: 0;
   background: #000;
 }
@@ -586,11 +586,26 @@ button {
 }
 
 .sidebar-game-card {
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: center;
   gap: 12px;
+  padding: 14px;
 }
 
 .sidebar-game-card .list-media {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
+  min-height: 76px;
+  border-radius: 12px;
+}
+
+.sidebar-game-card h3 {
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.sidebar-game-card p {
+  font-size: 0.88rem;
+  line-height: 1.35;
 }
 
 .player-aside {
@@ -702,6 +717,14 @@ button {
     max-width: none;
   }
 
+  .sidebar-game-card {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+
+  .sidebar-game-card .list-media {
+    min-height: 88px;
+  }
+
   .home-button-row {
     justify-content: start;
   }
@@ -738,11 +761,19 @@ button {
   }
 
   .player-shell {
-    min-height: 420px;
+    min-height: 500px;
   }
 
   .player-frame {
-    min-height: 420px;
+    min-height: 500px;
+  }
+
+  .sidebar-game-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .sidebar-game-card .list-media {
+    min-height: 96px;
   }
 }
 
@@ -771,6 +802,14 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .player-shell {
+    min-height: 360px;
+  }
+
+  .player-frame {
+    min-height: 360px;
+  }
+
   .button,
   .button-small {
     width: 100%;
@@ -786,5 +825,14 @@ button {
   .button-row > *,
   .home-button-row > * {
     flex: 1 1 100%;
+  }
+
+  .sidebar-game-card {
+    grid-template-columns: 72px minmax(0, 1fr);
+    padding: 12px;
+  }
+
+  .sidebar-game-card .list-media {
+    min-height: 72px;
   }
 }
