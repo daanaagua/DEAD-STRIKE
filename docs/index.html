@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEAD STRIKE | GitHub Pages Landing</title>
+    <meta
+      name="description"
+      content="DEAD STRIKE GitHub Pages landing page with links to the live zombie FPS site, category hubs, and featured browser shooter pages."
+    />
+    <meta name="robots" content="index,follow" />
+    <style>
+      :root {
+        --bg: #06080c;
+        --panel: rgba(13, 17, 24, 0.92);
+        --line: rgba(255, 255, 255, 0.12);
+        --text: #f2f4f7;
+        --muted: #9aa4b2;
+        --accent: #ff8f3d;
+        --accent-2: #54d2ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(255, 143, 61, 0.22), transparent 28%),
+          radial-gradient(circle at top right, rgba(84, 210, 255, 0.16), transparent 28%),
+          linear-gradient(180deg, #06080c 0%, #0b1018 55%, #06080c 100%);
+      }
+
+      .wrap {
+        width: min(1100px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 42px 0 56px;
+      }
+
+      .hero,
+      .panel,
+      .link-card {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--panel);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+      }
+
+      .hero {
+        padding: 28px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .mark {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #ff8f3d, #ffd166);
+        color: #111;
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 18px;
+        font-size: clamp(2.4rem, 6vw, 4.5rem);
+        line-height: 0.95;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .actions,
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .actions {
+        margin-top: 20px;
+        grid-template-columns: repeat(2, minmax(0, max-content));
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border-radius: 999px;
+        color: #fff;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .button.primary {
+        background: linear-gradient(135deg, var(--accent), #ff6e2f);
+        color: #111;
+        font-weight: 700;
+      }
+
+      .button.secondary {
+        background: rgba(84, 210, 255, 0.12);
+      }
+
+      .grid {
+        margin-top: 22px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .link-card {
+        padding: 18px;
+      }
+
+      .label {
+        color: var(--accent-2);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .footer {
+        margin-top: 22px;
+        padding: 18px 22px;
+      }
+
+      a.card-link {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      @media (max-width: 780px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .actions {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <div class="brand">
+          <div class="mark">DS</div>
+          <div>
+            <h2>DEAD STRIKE</h2>
+            <p>GitHub Pages landing page</p>
+          </div>
+        </div>
+
+        <h1>Browser shooter traffic routed into a zombie FPS game hub.</h1>
+        <p>
+          This GitHub Pages page is a lightweight backlink and discovery layer for the main DEAD STRIKE project. The live site focuses on instant-play browser FPS sessions, zombie game clusters, and shooter landing pages built for organic search and direct play.
+        </p>
+
+        <div class="actions">
+          <a class="button primary" href="https://dead-strike.com/">Open Live Site</a>
+          <a class="button secondary" href="https://github.com/daanaagua/DEAD-STRIKE">View Repository</a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <a class="card-link" href="https://dead-strike.com/">
+          <article class="link-card">
+            <p class="label">Featured</p>
+            <h3>Dead Strike Homepage</h3>
+            <p>Main game-first landing page with a playable zombie FPS stage and compact related-game discovery.</p>
+          </article>
+        </a>
+
+        <a class="card-link" href="https://dead-strike.com/games/zombie-games/">
+          <article class="link-card">
+            <p class="label">Category</p>
+            <h3>Zombie Games Hub</h3>
+            <p>Browse undead survival pages, action shooter variants, and supporting internal links across the site.</p>
+          </article>
+        </a>
+
+        <a class="card-link" href="https://dead-strike.com/games/fps-games/">
+          <article class="link-card">
+            <p class="label">Category</p>
+            <h3>FPS Games Hub</h3>
+            <p>Explore first-person browser shooters with mission summaries, controls, and direct playable pages.</p>
+          </article>
+        </a>
+
+        <a class="card-link" href="https://dead-strike.com/fps-shooting-survival-sim/">
+          <article class="link-card">
+            <p class="label">Detail Page</p>
+            <h3>FPS Shooting Survival Sim</h3>
+            <p>Desktop-focused survival FPS action with direct play and supporting strategy copy.</p>
+          </article>
+        </a>
+
+        <a class="card-link" href="https://dead-strike.com/zombie-survival-last-stand/">
+          <article class="link-card">
+            <p class="label">Detail Page</p>
+            <h3>Zombie Survival : Last Stand</h3>
+            <p>A darker undead survival scenario with wave pressure, bunker escape tension, and browser gameplay.</p>
+          </article>
+        </a>
+
+        <a class="card-link" href="https://dead-strike.com/sniper-master/">
+          <article class="link-card">
+            <p class="label">Detail Page</p>
+            <h3>Sniper Master</h3>
+            <p>Precision shooting page that broadens the site beyond pure zombie survival traffic.</p>
+          </article>
+        </a>
+      </section>
+
+      <section class="panel footer">
+        <p>
+          Looking for the production experience? Use the live domain at
+          <a href="https://dead-strike.com/">dead-strike.com</a>.
+          This GitHub Pages version is intentionally lightweight and optimized as a supporting external link asset.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
