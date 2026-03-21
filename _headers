@@ -21,6 +21,12 @@
 /manifest.webmanifest
   Cache-Control: public, max-age=604800
 
+/yandex_e8f7f7458a6bd44c.html
+  Content-Type: text/html; charset=UTF-8
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0, no-transform
+  Content-Security-Policy: default-src 'none'; script-src 'none'; style-src 'unsafe-inline'; img-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Robots-Tag: noindex, nofollow, noarchive
+
 /sitemap.xml
   Cache-Control: public, max-age=86400
 
