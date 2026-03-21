@@ -765,6 +765,43 @@ button {
   box-shadow: var(--shadow);
 }
 
+.compat-note {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid rgba(255, 209, 102, 0.28);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(18, 22, 31, 0.96), rgba(12, 16, 24, 0.96));
+  box-shadow: var(--shadow);
+}
+
+.compat-note-kicker {
+  margin: 0 0 8px;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+}
+
+.compat-note h2 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.compat-note p:last-child {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.compat-note-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .arcade-title {
   margin: 0;
   font-family: "Bebas Neue", sans-serif;
@@ -1028,6 +1065,10 @@ button {
     align-items: start;
   }
 
+  .compat-note-actions {
+    width: 100%;
+  }
+
   .stats-row,
   .meta-grid {
     grid-template-columns: 1fr;
@@ -1098,6 +1139,15 @@ button {
   .arcade-player-shell,
   .arcade-player-frame {
     min-height: 360px;
+  }
+
+  .compat-note {
+    padding: 18px;
+  }
+
+  .compat-note-actions {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .player-aside.home-sidebar {
