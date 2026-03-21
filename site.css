@@ -696,6 +696,40 @@ button {
   padding-top: 14px;
 }
 
+.detail-stage {
+  padding-top: 14px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 22px;
+  align-items: start;
+}
+
+.detail-main-column,
+.detail-sidebar {
+  display: grid;
+  gap: 16px;
+}
+
+.detail-titlebar {
+  margin-top: 2px;
+}
+
+.detail-sidebar-head {
+  display: grid;
+  gap: 10px;
+}
+
+.detail-sidebar-head .panel-title {
+  margin: 0;
+}
+
+.detail-sidebar-head .panel-copy {
+  margin: 0;
+}
+
 .arcade-stage {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
@@ -992,6 +1026,7 @@ button {
   .hero,
   .page-hero,
   .player-grid,
+  .detail-grid,
   .home-focus-grid,
   .article-grid,
   .category-grid,
