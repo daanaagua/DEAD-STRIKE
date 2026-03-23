@@ -1,4 +1,34 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+
+# Explicitly allow major AI and search crawlers.
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: CCBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
 
 Sitemap: https://dead-strike.com/sitemap.xml

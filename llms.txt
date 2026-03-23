@@ -1,0 +1,27 @@
+# DEAD STRIKE
+
+> Browser zombie FPS site where players can play Dead Strike online instantly and discover related shooter and survival games.
+
+## Docs
+
+- [Dead Strike](https://dead-strike.com/): Main playable page for Dead Strike with browser access, controls, gameplay overview, and direct links to the full game tab.
+- [Games Hub](https://dead-strike.com/games/): Landing page for the site's broader browser game catalog, organized around shooter and survival discovery.
+- [Zombie Games](https://dead-strike.com/games/zombie-games/): Category page collecting browser zombie games and adjacent undead survival titles.
+- [FPS Games](https://dead-strike.com/games/fps-games/): Category page focused on first-person shooter browser games related to Dead Strike intent.
+- [Shooter Games](https://dead-strike.com/games/shooter-games/): Collection page for browser shooter games covering arcade, tactical, and survival styles.
+
+## Related Games
+
+- [Zombie Survival : Last Stand](https://dead-strike.com/zombie-survival-last-stand/): Browser zombie survival game page for users comparing Dead Strike with other undead shooters.
+- [Challenge the Zombies](https://dead-strike.com/challenge-the-zombies/): Browser action page centered on zombie combat and wave-based pressure.
+- [Survival Wave Zombie Multiplayer](https://dead-strike.com/survival-wave-zombie-multiplayer/): Multiplayer zombie survival page for players seeking cooperative or competitive alternatives.
+- [MultiGun Arena Zombie Survival](https://dead-strike.com/multigun-arena-zombie-survival/): Browser zombie arena shooter page with similar survival and weapon-upgrade intent.
+- [Noob vs Zombie](https://dead-strike.com/noob-vs-zombie/): Zombie-themed browser action page for lighter, casual comparisons inside the catalog.
+
+## Key Facts
+
+- Primary entity: Dead Strike, a browser-playable zombie FPS
+- Core user intent: play online without download
+- Main themes: zombie waves, first-person shooting, weapon unlocks, instant browser access
+- Supporting navigation: zombie, FPS, and shooter hubs
+- Website: https://dead-strike.com/
