@@ -494,7 +494,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "survival-wave-zombie-multiplayer",
         "fort-clash-survival"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "zombie-reform",
@@ -517,7 +517,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "super-sergeant-zombies",
         "fort-clash-survival"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "zombie-incursion-world",
@@ -540,7 +540,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "super-sergeant-zombies",
         "biozombie-outbreak"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "pixel-zombie-survival",
@@ -563,7 +563,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "biozombie-outbreak",
         "zombie-last-guard"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "zombie-last-guard",
@@ -586,7 +586,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "challenge-the-zombies",
         "edge-of-survival"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "biozombie-outbreak",
@@ -609,7 +609,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "challenge-the-zombies",
         "dead-strike"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "super-sergeant-zombies",
@@ -632,7 +632,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "zombie-clash-3d",
         "dead-strike"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "minewar-soldiers-vs-zombies",
@@ -655,7 +655,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "zombie-clash-3d",
         "biozombie-outbreak"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "counter-craft-sniper",
@@ -678,7 +678,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "blocky-combat-swat-original-2026",
         "subway-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "urban-sniper-multiplayer-2",
@@ -701,7 +701,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "pubg-hack",
         "battledudes-io"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "sniper-clash-3d",
@@ -724,7 +724,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "zombie-clash-3d",
         "rocket-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "zombie-clash-3d",
@@ -747,7 +747,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "subway-clash-3d",
         "rocket-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "subway-clash-3d",
@@ -770,7 +770,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "blocky-combat-swat-original-2026",
         "lone-wolf-strike"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "rocket-clash-3d",
@@ -793,7 +793,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "lone-wolf-strike",
         "zombie-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "fort-clash-survival",
@@ -816,7 +816,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "lone-wolf-strike",
         "call-of-ops-3-zombies"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "lone-wolf-strike",
@@ -839,23 +839,23 @@ window.DEAD_STRIKE_LIBRARY = {
         "pubg-hack",
         "fort-clash-survival"
       ],
-      "isLive": false
+      "isLive": true
     }
   ],
   "pools": {
     "playerStrip": [
-      "dead-strike",
-      "fps-shooting-survival-sim",
-      "zombie-survival-last-stand",
-      "survival-wave-zombie-multiplayer",
-      "multigun-arena-zombie-survival",
-      "sniper-master",
-      "pubg-hack",
-      "battledudes-io",
-      "wacky-strike",
-      "edge-of-survival",
-      "guns-vs-magic",
-      "rpg-soldier-shooter"
+      "call-of-ops-3-zombies",
+      "zombie-reform",
+      "zombie-incursion-world",
+      "counter-craft-sniper",
+      "zombie-clash-3d",
+      "fort-clash-survival",
+      "lone-wolf-strike",
+      "subway-clash-3d",
+      "biozombie-outbreak",
+      "minewar-soldiers-vs-zombies",
+      "sniper-clash-3d",
+      "rocket-clash-3d"
     ],
     "popular": [
       "dead-strike",
@@ -872,38 +872,47 @@ window.DEAD_STRIKE_LIBRARY = {
       "guns-vs-magic"
     ],
     "fresh": [
-      "super-cat-free-fire",
-      "space-adventure-noobiks-battle-vs-zombies",
-      "rpg-soldier-shooter",
-      "noob-vs-zombie-2",
-      "noob-vs-zombie",
-      "minecraft-noob-vs-zombies-3",
-      "dusk-warz",
-      "challenge-the-zombies",
-      "blocky-combat-swat-original-2026",
-      "edge-of-survival",
-      "wacky-strike",
-      "guns-vs-magic"
+      "call-of-ops-3-zombies",
+      "zombie-reform",
+      "zombie-incursion-world",
+      "pixel-zombie-survival",
+      "zombie-last-guard",
+      "biozombie-outbreak",
+      "super-sergeant-zombies",
+      "minewar-soldiers-vs-zombies",
+      "counter-craft-sniper",
+      "urban-sniper-multiplayer-2",
+      "sniper-clash-3d",
+      "zombie-clash-3d"
     ],
     "fallbacks": {
       "fps": [
         "dead-strike",
+        "call-of-ops-3-zombies",
+        "zombie-reform",
+        "zombie-incursion-world",
         "fps-shooting-survival-sim",
         "zombie-survival-last-stand",
         "survival-wave-zombie-multiplayer",
         "multigun-arena-zombie-survival",
         "pubg-hack",
         "battledudes-io",
-        "sniper-master",
-        "blocky-combat-swat-original-2026",
-        "wacky-strike",
-        "rpg-soldier-shooter",
-        "edge-of-survival"
+        "counter-craft-sniper",
+        "urban-sniper-multiplayer-2"
       ],
       "zombie": [
         "dead-strike",
+        "call-of-ops-3-zombies",
+        "zombie-reform",
+        "zombie-incursion-world",
         "fps-shooting-survival-sim",
         "zombie-survival-last-stand",
+        "zombie-last-guard",
+        "biozombie-outbreak",
+        "super-sergeant-zombies",
+        "pixel-zombie-survival",
+        "minewar-soldiers-vs-zombies",
+        "zombie-clash-3d",
         "survival-wave-zombie-multiplayer",
         "multigun-arena-zombie-survival",
         "edge-of-survival",
@@ -916,15 +925,30 @@ window.DEAD_STRIKE_LIBRARY = {
       ],
       "sniper": [
         "sniper-master",
+        "counter-craft-sniper",
+        "urban-sniper-multiplayer-2",
+        "sniper-clash-3d",
+        "lone-wolf-strike",
         "pubg-hack",
         "battledudes-io",
-        "blocky-combat-swat-original-2026",
-        "rpg-soldier-shooter",
-        "dead-strike"
+        "blocky-combat-swat-original-2026"
       ],
       "shooter": [
         "dead-strike",
         "sniper-master",
+        "counter-craft-sniper",
+        "urban-sniper-multiplayer-2",
+        "sniper-clash-3d",
+        "lone-wolf-strike",
+        "subway-clash-3d",
+        "rocket-clash-3d",
+        "fort-clash-survival",
+        "zombie-clash-3d",
+        "pixel-zombie-survival",
+        "zombie-last-guard",
+        "biozombie-outbreak",
+        "super-sergeant-zombies",
+        "minewar-soldiers-vs-zombies",
         "pubg-hack",
         "battledudes-io",
         "blocky-combat-swat-original-2026",
@@ -938,13 +962,29 @@ window.DEAD_STRIKE_LIBRARY = {
       ],
       "liveLibrary": [
         "dead-strike",
+        "call-of-ops-3-zombies",
+        "zombie-reform",
+        "zombie-incursion-world",
         "fps-shooting-survival-sim",
         "zombie-survival-last-stand",
+        "pixel-zombie-survival",
+        "zombie-last-guard",
+        "biozombie-outbreak",
+        "super-sergeant-zombies",
+        "minewar-soldiers-vs-zombies",
         "wacky-strike",
         "survival-wave-zombie-multiplayer",
         "super-cat-free-fire",
         "space-adventure-noobiks-battle-vs-zombies",
         "sniper-master",
+        "counter-craft-sniper",
+        "urban-sniper-multiplayer-2",
+        "sniper-clash-3d",
+        "zombie-clash-3d",
+        "subway-clash-3d",
+        "rocket-clash-3d",
+        "fort-clash-survival",
+        "lone-wolf-strike",
         "rpg-soldier-shooter",
         "pubg-hack",
         "noob-vs-zombie-2",
@@ -968,10 +1008,19 @@ window.DEAD_STRIKE_LIBRARY = {
       "placeholder": "data-category-grid-zombie",
       "slugs": [
         "dead-strike",
+        "call-of-ops-3-zombies",
+        "zombie-reform",
+        "zombie-incursion-world",
         "fps-shooting-survival-sim",
         "zombie-survival-last-stand",
+        "zombie-last-guard",
+        "biozombie-outbreak",
+        "super-sergeant-zombies",
+        "zombie-clash-3d",
         "survival-wave-zombie-multiplayer",
         "multigun-arena-zombie-survival",
+        "pixel-zombie-survival",
+        "minewar-soldiers-vs-zombies",
         "edge-of-survival",
         "challenge-the-zombies",
         "noob-vs-zombie",
@@ -988,17 +1037,19 @@ window.DEAD_STRIKE_LIBRARY = {
       "placeholder": "data-category-grid-fps",
       "slugs": [
         "dead-strike",
+        "call-of-ops-3-zombies",
+        "zombie-reform",
+        "zombie-incursion-world",
         "fps-shooting-survival-sim",
         "zombie-survival-last-stand",
         "survival-wave-zombie-multiplayer",
         "multigun-arena-zombie-survival",
         "pubg-hack",
         "battledudes-io",
-        "sniper-master",
-        "blocky-combat-swat-original-2026",
-        "wacky-strike",
-        "rpg-soldier-shooter",
-        "edge-of-survival"
+        "counter-craft-sniper",
+        "urban-sniper-multiplayer-2",
+        "sniper-clash-3d",
+        "lone-wolf-strike"
       ]
     },
     "shooter-games": {
@@ -1009,48 +1060,35 @@ window.DEAD_STRIKE_LIBRARY = {
       "slugs": [
         "dead-strike",
         "sniper-master",
+        "counter-craft-sniper",
+        "urban-sniper-multiplayer-2",
+        "sniper-clash-3d",
+        "lone-wolf-strike",
         "rpg-soldier-shooter",
-        "wacky-strike",
-        "battledudes-io",
+        "subway-clash-3d",
+        "rocket-clash-3d",
+        "fort-clash-survival",
+        "zombie-clash-3d",
         "blocky-combat-swat-original-2026",
+        "battledudes-io",
         "pubg-hack",
+        "wacky-strike",
         "guns-vs-magic",
         "super-cat-free-fire",
         "space-adventure-noobiks-battle-vs-zombies",
+        "pixel-zombie-survival",
+        "biozombie-outbreak",
+        "super-sergeant-zombies",
+        "minewar-soldiers-vs-zombies",
+        "zombie-last-guard",
         "edge-of-survival",
         "challenge-the-zombies"
       ]
     }
   },
   "plannedPools": {
-    "playerStripLaunch": [
-      "call-of-ops-3-zombies",
-      "zombie-reform",
-      "zombie-incursion-world",
-      "counter-craft-sniper",
-      "zombie-clash-3d",
-      "fort-clash-survival",
-      "lone-wolf-strike",
-      "subway-clash-3d",
-      "biozombie-outbreak",
-      "minewar-soldiers-vs-zombies",
-      "sniper-clash-3d",
-      "rocket-clash-3d"
-    ],
-    "freshLaunch": [
-      "call-of-ops-3-zombies",
-      "zombie-reform",
-      "zombie-incursion-world",
-      "pixel-zombie-survival",
-      "zombie-last-guard",
-      "biozombie-outbreak",
-      "super-sergeant-zombies",
-      "minewar-soldiers-vs-zombies",
-      "counter-craft-sniper",
-      "urban-sniper-multiplayer-2",
-      "sniper-clash-3d",
-      "zombie-clash-3d"
-    ]
+    "playerStripLaunch": [],
+    "freshLaunch": []
   },
   "renderRules": {
     "responsiveCounts": {
