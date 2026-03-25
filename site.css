@@ -931,6 +931,19 @@ button {
   text-transform: uppercase;
 }
 
+.sidebar-icon-panel-flat {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sidebar-icon-panel-flat .sidebar-panel-title {
+  margin-bottom: 10px;
+  padding-inline: 2px;
+}
+
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

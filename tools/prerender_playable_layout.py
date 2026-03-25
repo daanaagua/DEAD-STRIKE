@@ -133,11 +133,11 @@ def build_sidebar_sections(current_slug):
     popular = get_pool_games("popular", {current_slug})
     fresh = get_pool_games("fresh", {current_slug})
     return (
-        '<section class="sidebar-icon-panel">'
+        '<section class="sidebar-icon-panel sidebar-icon-panel-flat">'
         '<div class="sidebar-panel-title"><h2>Popular Games</h2><span>🔥</span></div>'
         f'<div data-home-popular aria-label="Popular Games icon wall">{sidebar_html(popular)}</div>'
         '</section>'
-        '<section class="sidebar-icon-panel">'
+        '<section class="sidebar-icon-panel sidebar-icon-panel-flat">'
         '<div class="sidebar-panel-title"><h2>New Games</h2><span>✨</span></div>'
         f'<div data-home-fresh aria-label="New Games icon wall">{sidebar_html(fresh)}</div>'
         '</section>'
@@ -159,6 +159,11 @@ def update_home():
         if node:
             node.clear()
             node.append(BeautifulSoup(sidebar_html(get_pool_games(pool_name, {current_slug})), "html.parser"))
+
+    for panel in soup.select("section.sidebar-icon-panel"):
+        classes = set(panel.get("class", []))
+        classes.add("sidebar-icon-panel-flat")
+        panel["class"] = list(classes)
 
     path.write_text(str(soup), encoding="utf-8")
 

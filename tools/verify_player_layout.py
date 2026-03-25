@@ -30,6 +30,7 @@ SITE_CSS_NEEDS = [
     ".player-strip-grid",
     ".player-strip-card",
     ".sidebar-icon-grid",
+    ".sidebar-icon-panel-flat",
     "repeat(6, minmax(0, 1fr))",
     "repeat(4, minmax(0, 1fr))",
     "repeat(3, minmax(0, 1fr))",
@@ -134,6 +135,8 @@ def validate_page(path: Path, errors: list[str]) -> None:
             errors.append(f"{path}: sidebar should include prerendered sidebar-icon-card links for SEO-friendly fallback")
         if "compat-note" not in html:
             errors.append(f"{path}: playable layout must include a compat-note block")
+        if "sidebar-icon-panel-flat" not in html:
+            errors.append(f"{path}: playable layout must use frameless sidebar panels")
 
 
 def main() -> int:
