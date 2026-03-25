@@ -1022,6 +1022,91 @@ button {
   letter-spacing: 0.08em;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.player-strip,
+.sidebar-icon-wall {
+  display: grid;
+  gap: 14px;
+}
+
+.player-strip-grid,
+.sidebar-icon-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.player-strip-card,
+.sidebar-icon-card {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: var(--shadow);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.player-strip-card:hover,
+.sidebar-icon-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 91, 46, 0.45);
+}
+
+.player-strip-card img,
+.sidebar-icon-card img {
+  width: 100%;
+  background: #0b0f17;
+  object-fit: cover;
+}
+
+.player-strip-card img {
+  aspect-ratio: 4 / 3;
+}
+
+.sidebar-icon-card img {
+  aspect-ratio: 1 / 1;
+}
+
+.player-strip-title {
+  display: block;
+  padding: 10px 8px 12px;
+  color: var(--text);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+@media (min-width: 1180px) {
+  .sidebar-icon-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1179px) {
+  .player-strip-grid,
+  .sidebar-icon-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .player-strip-grid,
+  .sidebar-icon-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1100px) {
   .hero,
   .page-hero,

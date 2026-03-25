@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>DEAD STRIKE Local Embed Probe</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Arial, sans-serif;
+        background: #090b10;
+        color: #f3f4f6;
+      }
+
+      body {
+        margin: 0;
+        padding: 20px;
+        display: grid;
+        gap: 16px;
+        background: #090b10;
+      }
+
+      .panel {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        padding: 16px;
+        background: rgba(13, 17, 24, 0.92);
+      }
+
+      code {
+        word-break: break-all;
+      }
+
+      iframe {
+        width: 100%;
+        min-height: 70vh;
+        border: 0;
+        border-radius: 16px;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="panel">
+      <h1>Local-only Embed Probe</h1>
+      <p>This page exists only to support local QA. Outside localhost/file preview it stays inert and never loads a probe target.</p>
+      <p>Use <code>?src=...</code> to test approved game embeds with the site's production iframe attributes.</p>
+      <p id="status">Waiting for src query parameter.</p>
+    </section>
+    <iframe
+      id="probeFrame"
+      title="Embed probe"
+      loading="eager"
+      allow="fullscreen *; gamepad *"
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+    <script>
+      const LOCAL_HOSTS = new Set(["", "localhost", "127.0.0.1", "[::1]"]);
+      const ALLOWED_FRAME_HOSTS = new Set([
+        "html5.gamemonetize.co",
+        "dead-strike.1games.io",
+        "play.1games.io",
+        "play2.1games.io",
+        "games.1games.io"
+      ]);
+      const params = new URLSearchParams(window.location.search);
+      const src = params.get("src");
+      const status = document.getElementById("status");
+      const frame = document.getElementById("probeFrame");
+
+      function isLocalHost() {
+        return LOCAL_HOSTS.has(window.location.hostname);
+      }
+
+      function isApprovedSrc(value) {
+        try {
+          const url = new URL(value);
+          return url.protocol === "https:" && ALLOWED_FRAME_HOSTS.has(url.hostname);
+        } catch (error) {
+          return false;
+        }
+      }
+
+      if (!isLocalHost()) {
+        status.textContent = "Blocked: this local-only tool refuses to run outside localhost/file preview.";
+      } else if (src && isApprovedSrc(src)) {
+        frame.src = src;
+        status.textContent = "Loading approved local probe target: " + src;
+      } else if (src) {
+        status.textContent = "Blocked: src must be HTTPS and match the approved embed host list for local QA.";
+      } else {
+        status.textContent = "Missing src query parameter. Example: ?src=https://html5.gamemonetize.co/.../";
+      }
+    </script>
+  </body>
+</html>
