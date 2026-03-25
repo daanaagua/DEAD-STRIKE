@@ -939,9 +939,8 @@ button {
   box-shadow: none;
 }
 
-.sidebar-icon-panel-flat .sidebar-panel-title {
-  margin-bottom: 10px;
-  padding-inline: 2px;
+.sidebar-icon-panel-flat + .sidebar-icon-panel-flat {
+  margin-top: 8px;
 }
 
 .icon-grid {

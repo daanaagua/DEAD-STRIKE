@@ -137,6 +137,8 @@ def validate_page(path: Path, errors: list[str]) -> None:
             errors.append(f"{path}: playable layout must include a compat-note block")
         if "sidebar-icon-panel-flat" not in html:
             errors.append(f"{path}: playable layout must use frameless sidebar panels")
+        if "sidebar-panel-title" in html or "<h2>Popular Games</h2>" in html or "<h2>New Games</h2>" in html:
+            errors.append(f"{path}: playable sidebar must not render Popular Games/New Games headings")
 
 
 def main() -> int:
