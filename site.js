@@ -206,7 +206,11 @@
     return dedupeGames(combined, [currentCanonicalSlug], requestedLimit);
   }
 
-  function getPoolGames(poolName, limit) {
+  function getCurrentPageSlug() {
+    return window.DEAD_STRIKE_PAGE && window.DEAD_STRIKE_PAGE.slug ? window.DEAD_STRIKE_PAGE.slug : "";
+  }
+
+  function getPoolGames(poolName, limit, excludeSlugs) {
     const requestedLimit = limit || DESKTOP_COUNT;
     const combined = [...getPool(poolName)];
 
@@ -214,7 +218,7 @@
       combined.push(...getPool(fallbackPoolName));
     });
 
-    return dedupeGames(combined, [], requestedLimit);
+    return dedupeGames(combined, excludeSlugs || [], requestedLimit);
   }
 
   function createImage(game) {
@@ -287,13 +291,14 @@
   function resolveStripGames(element) {
     const limit = getResponsiveCount();
     const explicitPool = element.getAttribute("data-player-strip");
+    const currentSlug = getCurrentPageSlug();
 
     if (explicitPool && explicitPool !== "auto") {
-      return getPoolGames(explicitPool, limit);
+      return getPoolGames(explicitPool, limit, currentSlug ? [currentSlug] : []);
     }
 
-    if (window.DEAD_STRIKE_PAGE && window.DEAD_STRIKE_PAGE.slug) {
-      return getRelatedGames(window.DEAD_STRIKE_PAGE.slug, limit);
+    if (currentSlug) {
+      return getRelatedGames(currentSlug, limit);
     }
 
     return getPoolGames("playerStrip", limit);
@@ -314,11 +319,13 @@
     });
 
     document.querySelectorAll("[data-home-popular]").forEach((element) => {
-      renderIconWall(element, getPoolGames("popular", limit));
+      const currentSlug = getCurrentPageSlug();
+      renderIconWall(element, getPoolGames("popular", limit, currentSlug ? [currentSlug] : []));
     });
 
     document.querySelectorAll("[data-home-fresh]").forEach((element) => {
-      renderIconWall(element, getPoolGames("fresh", limit));
+      const currentSlug = getCurrentPageSlug();
+      renderIconWall(element, getPoolGames("fresh", limit, currentSlug ? [currentSlug] : []));
     });
   }
 
