@@ -33,6 +33,7 @@ SITE_CSS_NEEDS = [
     "repeat(6, minmax(0, 1fr))",
     "repeat(4, minmax(0, 1fr))",
     "repeat(3, minmax(0, 1fr))",
+    ".player-strip-title",
 ]
 
 
@@ -116,6 +117,23 @@ def validate_page(path: Path, errors: list[str]) -> None:
             errors.append(f"{path}: missing <h1> for strip ordering check")
         elif strip_pos > title_pos:
             errors.append(f"{path}: player strip must appear before the title block")
+
+        if 'class="player-strip-card"' not in html:
+            errors.append(f"{path}: player strip must include prerendered player-strip-card links")
+
+    if path.name == "index.html" or path.parent.name != path.parents[1].name:
+        pass
+
+    is_home = path.name == "index.html" and path.parent == path.parents[1]
+    is_detail = not is_home and path.name == "index.html" and path.parent.name not in {"games", "docs"}
+
+    if is_home or is_detail:
+        if "data-home-popular" not in html or "data-home-fresh" not in html:
+            errors.append(f"{path}: playable layout must include both data-home-popular and data-home-fresh sidebar hooks")
+        if html.count('class="sidebar-icon-card"') < 6:
+            errors.append(f"{path}: sidebar should include prerendered sidebar-icon-card links for SEO-friendly fallback")
+        if "compat-note" not in html:
+            errors.append(f"{path}: playable layout must include a compat-note block")
 
 
 def main() -> int:

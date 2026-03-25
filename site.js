@@ -239,7 +239,7 @@
     link.setAttribute("aria-label", game.title);
     link.appendChild(createImage(game));
 
-    label.className = "player-strip-title";
+    label.className = "sr-only";
     label.textContent = game.title;
     link.appendChild(label);
     return link;
