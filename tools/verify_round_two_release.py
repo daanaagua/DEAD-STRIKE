@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -13,9 +14,61 @@ except ModuleNotFoundError:
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE_FILE = ROOT / "tools" / "round_two_sources.json"
+DEFAULT_MANIFEST_FILE = ROOT / "tools" / "round_two_manifest.json"
 EXPECTED_RELEASE_GROUP = "expansion-2026-04"
 EXPECTED_IFRAME_PREFIX = "https://html5.gamemonetize."
 EXPECTED_THUMB_PREFIX = "https://img.gamemonetize.com/"
+EXPECTED_PRIMARY_COUNT = 22
+EXPECTED_LIVE_LASTMOD = "2026-04-11"
+
+LIVE_COVERAGE_HOME = ROOT / "games" / "index.html"
+LIVE_COVERAGE_CATEGORY_PAGES = {
+    "zombie-games": ROOT / "games" / "zombie-games" / "index.html",
+    "fps-games": ROOT / "games" / "fps-games" / "index.html",
+    "shooter-games": ROOT / "games" / "shooter-games" / "index.html",
+}
+LIVE_COVERAGE_SITEMAP = ROOT / "sitemap.xml"
+LIVE_COVERAGE_HOME_LEAD_SLUGS = [
+    "fps-shooting-game-3d-gun-game",
+    "command-strike-fps-2",
+    "shooterz-io",
+    "nightwalkers-io",
+    "sniper-mission-war",
+    "urban-sniper-multiplayer",
+    "zombie-defense-last-stand",
+    "zombie-shooter-3d",
+]
+LIVE_COVERAGE_CATEGORY_EXPECTATIONS = {
+    "zombie-games": [
+        "special-forces-war-zombie-attack",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "zombie-defense-war-z-survival",
+        "zombie-defense-last-stand",
+        "grand-zombie-swarm",
+        "zombie-vacation-2",
+        "zombie-shooter-3d",
+        "zombie-survival-pixel-apocalypse",
+        "pixel-multiplayer-survival-zombie",
+    ],
+    "fps-games": [
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "shooterz-io",
+        "blocky-siege",
+        "sniper-mission-war",
+    ],
+}
+LIVE_COVERAGE_HUB_URLS = [
+    "https://dead-strike.com/",
+    "https://dead-strike.com/games/",
+    "https://dead-strike.com/games/zombie-games/",
+    "https://dead-strike.com/games/fps-games/",
+    "https://dead-strike.com/games/shooter-games/",
+]
 
 REQUIRED_ITEM_FIELDS = [
     "title",
@@ -559,6 +612,141 @@ def validate_manifest_payload(data: Any, errors: list[str]) -> None:
                 validate_manifest_media_fields(bucket_name, item, expected_item, errors)
 
 
+def load_text_file(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def extract_href_slugs(page_text: str) -> list[str]:
+    return re.findall(r'href="/([^/]+)/"', page_text)
+
+
+def extract_round_two_page_order(page_text: str, primary_slugs: list[str]) -> list[str]:
+    primary_set = set(primary_slugs)
+    return [slug for slug in extract_href_slugs(page_text) if slug in primary_set]
+
+
+def format_slug_list(slugs: list[str]) -> str:
+    return ", ".join(slugs) if slugs else "(none)"
+
+
+def validate_exact_slug_order(label: str, actual: list[str], expected: list[str], errors: list[str]) -> None:
+    if actual != expected:
+        errors.append(
+            f"{label} round-two slug order mismatch: found [{format_slug_list(actual)}], expected [{format_slug_list(expected)}]"
+        )
+
+
+def extract_sitemap_lastmods(sitemap_text: str) -> dict[str, str]:
+    matches = re.findall(r"<url>\s*<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>\s*</url>", sitemap_text, re.S)
+    return {loc.strip(): lastmod.strip() for loc, lastmod in matches}
+
+
+def extract_primary_slugs_from_manifest(data: Any, errors: list[str]) -> list[str]:
+    primary = data.get("primary") if isinstance(data, dict) else None
+    if not isinstance(primary, list):
+        errors.append("live coverage check requires manifest.primary to be a list")
+        return []
+
+    slugs: list[str] = []
+    seen_slugs: set[str] = set()
+    for index, item in enumerate(primary):
+        if not isinstance(item, dict):
+            errors.append(f"manifest primary entry at index {index} must be an object for live coverage checks")
+            continue
+
+        slug = item.get("slug")
+        if not isinstance(slug, str) or not slug.strip():
+            errors.append(f"manifest primary entry at index {index} must include a non-empty slug for live coverage checks")
+            continue
+
+        if slug in seen_slugs:
+            errors.append(f"manifest primary contains duplicate slug '{slug}' for live coverage checks")
+            continue
+
+        seen_slugs.add(slug)
+        slugs.append(slug)
+
+    if len(slugs) != EXPECTED_PRIMARY_COUNT:
+        errors.append(
+            f"live coverage check requires exactly {EXPECTED_PRIMARY_COUNT} primary slugs in the manifest, found {len(slugs)}"
+        )
+
+    return slugs
+
+
+def validate_live_coverage(manifest_data: Any, errors: list[str]) -> None:
+    primary_slugs = extract_primary_slugs_from_manifest(manifest_data, errors)
+    if not primary_slugs:
+        return
+
+    try:
+        games_index = load_text_file(LIVE_COVERAGE_HOME)
+        category_pages = {
+            category_name: load_text_file(path) for category_name, path in LIVE_COVERAGE_CATEGORY_PAGES.items()
+        }
+        sitemap = load_text_file(LIVE_COVERAGE_SITEMAP)
+    except Exception as exc:
+        errors.append(f"live coverage check could not read required site files: {exc}")
+        return
+
+    home_expected = LIVE_COVERAGE_HOME_LEAD_SLUGS + [
+        slug for slug in primary_slugs if slug not in LIVE_COVERAGE_HOME_LEAD_SLUGS
+    ]
+    validate_exact_slug_order(
+        "games/index.html",
+        extract_round_two_page_order(games_index, primary_slugs),
+        home_expected,
+        errors,
+    )
+
+    for category_name, expected_slugs in LIVE_COVERAGE_CATEGORY_EXPECTATIONS.items():
+        validate_exact_slug_order(
+            f"games/{category_name}/index.html",
+            extract_round_two_page_order(category_pages[category_name], primary_slugs),
+            expected_slugs,
+            errors,
+        )
+
+    validate_exact_slug_order(
+        "games/shooter-games/index.html",
+        extract_round_two_page_order(category_pages["shooter-games"], primary_slugs),
+        primary_slugs,
+        errors,
+    )
+
+    for slug in primary_slugs:
+        route_href = f'/{slug}/'
+        present_in_categories = [
+            category_name for category_name, page_text in category_pages.items() if route_href in page_text
+        ]
+        if not present_in_categories:
+            errors.append(
+                "round-two live route "
+                f"'{route_href}' is missing from all category pages "
+                "(expected at least one of zombie-games, fps-games, shooter-games)"
+            )
+
+    sitemap_lastmods = extract_sitemap_lastmods(sitemap)
+    for slug in primary_slugs:
+        live_url = f"https://dead-strike.com/{slug}/"
+        lastmod = sitemap_lastmods.get(live_url)
+        if lastmod is None:
+            errors.append(f"sitemap.xml missing round-two live URL '{live_url}'")
+        elif lastmod != EXPECTED_LIVE_LASTMOD:
+            errors.append(
+                f"sitemap.xml expected lastmod {EXPECTED_LIVE_LASTMOD} for '{live_url}', found {format_value(lastmod)}"
+            )
+
+    for hub_url in LIVE_COVERAGE_HUB_URLS:
+        lastmod = sitemap_lastmods.get(hub_url)
+        if lastmod is None:
+            errors.append(f"sitemap.xml missing hub URL '{hub_url}'")
+        elif lastmod != EXPECTED_LIVE_LASTMOD:
+            errors.append(
+                f"sitemap.xml expected lastmod {EXPECTED_LIVE_LASTMOD} for '{hub_url}', found {format_value(lastmod)}"
+            )
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -569,6 +757,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--manifest",
         help="Path to round-two manifest JSON",
+    )
+    parser.add_argument(
+        "--check-live-coverage",
+        action="store_true",
+        help="Verify that round-two primary slugs are linked on live hub pages and present in sitemap.xml",
     )
     return parser.parse_args()
 
@@ -585,14 +778,26 @@ def main() -> int:
 
     validate_source_payload(data, errors)
 
-    if args.manifest:
+    manifest_data: Any | None = None
+
+    manifest_path = Path(args.manifest) if args.manifest else None
+    if args.check_live_coverage and manifest_path is None:
+        manifest_path = DEFAULT_MANIFEST_FILE
+
+    if manifest_path is not None:
         try:
-            manifest_data = load_source_list(Path(args.manifest))
+            manifest_data = load_source_list(manifest_path)
         except Exception as exc:
             print(f"ERROR: {exc}")
             return 1
 
         validate_manifest_payload(manifest_data, errors)
+
+    if args.check_live_coverage:
+        if manifest_data is None:
+            print(f"ERROR: live coverage check could not load manifest {DEFAULT_MANIFEST_FILE}")
+            return 1
+        validate_live_coverage(manifest_data, errors)
 
     if errors:
         print("ROUND_TWO_SOURCE_LIST_VERIFICATION_FAILED")
