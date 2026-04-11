@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -23,6 +24,11 @@ SITE_JS_NEEDS = [
     "renderIconWall",
     "getPoolGames",
     "getRelatedGames",
+    "data-load-player",
+    "data-player-shell",
+    "data-iframe-src",
+    "loadPlayerShell",
+    "bindDeferredPlayers",
 ]
 
 SITE_CSS_NEEDS = [
@@ -35,6 +41,10 @@ SITE_CSS_NEEDS = [
     "repeat(4, minmax(0, 1fr))",
     "repeat(3, minmax(0, 1fr))",
     ".player-strip-title",
+    ".player-shell-deferred",
+    ".player-poster",
+    ".player-poster-media",
+    ".player-poster-actions",
 ]
 
 
@@ -139,6 +149,18 @@ def validate_page(path: Path, errors: list[str]) -> None:
             errors.append(f"{path}: playable layout must use frameless sidebar panels")
         if "sidebar-panel-title" in html or "<h2>Popular Games</h2>" in html or "<h2>New Games</h2>" in html:
             errors.append(f"{path}: playable sidebar must not render Popular Games/New Games headings")
+        has_player_shell = 'id="playerShell"' in html or re.search(r"<iframe[^>]+class=\"[^\"]*player-frame", html)
+        if has_player_shell:
+            if 'data-player-shell=""' not in html and "data-player-shell" not in html:
+                errors.append(f"{path}: playable layout must mark the player shell for deferred loading")
+            if "data-iframe-src" not in html:
+                errors.append(f"{path}: playable layout must store iframe src in data-iframe-src")
+            if "data-load-player" not in html:
+                errors.append(f"{path}: playable layout must include an in-page load control")
+            if "player-poster" not in html:
+                errors.append(f"{path}: playable layout must include a poster overlay")
+            if re.search(r"<iframe[^>]+loading=\"eager\"", html):
+                errors.append(f"{path}: playable iframe should not use loading=\"eager\" anymore")
 
 
 def main() -> int:

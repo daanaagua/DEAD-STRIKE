@@ -11,6 +11,7 @@
   let librarySource = null;
   let gamesMapCache = new Map();
   let fullscreenDelegated = false;
+  let playerDelegated = false;
   let missingLibraryWarned = false;
 
   function pageNeedsLibrary() {
@@ -329,12 +330,116 @@
     });
   }
 
+  function resolvePlayerShell(target) {
+    if (!target) {
+      return null;
+    }
+
+    if (typeof target === "string") {
+      return document.querySelector(target);
+    }
+
+    return target instanceof Element ? target : null;
+  }
+
+  function setPlayerButtonState(shell, isLoading) {
+    shell.querySelectorAll("[data-load-player]").forEach((button) => {
+      if (!(button instanceof HTMLButtonElement)) {
+        return;
+      }
+
+      const defaultLabel =
+        button.getAttribute("data-load-player-default") || button.textContent || "Play in Page";
+      const loadingLabel = button.getAttribute("data-load-player-loading") || "Loading...";
+
+      if (!button.hasAttribute("data-load-player-default")) {
+        button.setAttribute("data-load-player-default", defaultLabel);
+      }
+
+      button.disabled = isLoading;
+      button.textContent = isLoading ? loadingLabel : defaultLabel;
+      button.setAttribute("aria-busy", isLoading ? "true" : "false");
+    });
+  }
+
+  function loadPlayerShell(target) {
+    const shell = resolvePlayerShell(target);
+    const frame = shell ? shell.querySelector("iframe[data-iframe-src]") : null;
+
+    if (!shell || !frame) {
+      return Promise.resolve(shell);
+    }
+
+    const nextSrc = frame.getAttribute("data-iframe-src");
+    const currentSrc = frame.getAttribute("src") || "";
+
+    if (!nextSrc) {
+      shell.dataset.playerLoaded = "true";
+      return Promise.resolve(shell);
+    }
+
+    if (shell.dataset.playerLoaded === "true" && currentSrc === nextSrc) {
+      return Promise.resolve(shell);
+    }
+
+    if (shell.dataset.playerLoaded === "loading") {
+      return Promise.resolve(shell);
+    }
+
+    shell.dataset.playerLoaded = "loading";
+    setPlayerButtonState(shell, true);
+
+    return new Promise((resolve) => {
+      let finished = false;
+      const finalize = () => {
+        if (finished) {
+          return;
+        }
+
+        finished = true;
+        shell.dataset.playerLoaded = "true";
+        setPlayerButtonState(shell, false);
+        resolve(shell);
+      };
+
+      frame.addEventListener("load", finalize, { once: true });
+
+      if (currentSrc !== nextSrc) {
+        frame.setAttribute("src", nextSrc);
+      }
+
+      window.setTimeout(finalize, 5000);
+    });
+  }
+
+  function bindDeferredPlayers() {
+    if (playerDelegated) {
+      return;
+    }
+
+    playerDelegated = true;
+    document.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-load-player]");
+      if (!button) {
+        return;
+      }
+
+      event.preventDefault();
+      const target = button.getAttribute("data-load-player") || button.closest("[data-player-shell]");
+      loadPlayerShell(target);
+    });
+  }
+
   async function toggleFullscreen(button) {
     const selector = button.getAttribute("data-fullscreen-target");
     const target = selector ? document.querySelector(selector) : null;
 
     if (!target) {
       return;
+    }
+
+    if (target.hasAttribute("data-player-shell")) {
+      loadPlayerShell(target);
     }
 
     try {
@@ -380,6 +485,7 @@
     }
 
     initialized = true;
+    bindDeferredPlayers();
     bindFullscreenButtons();
     if (pageNeedsLibrary()) {
       renderLibraryHooks();

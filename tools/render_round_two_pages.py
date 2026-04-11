@@ -346,6 +346,33 @@ def render_sidebar_wall(games: list[dict], hook: str, label: str) -> str:
     )
 
 
+def render_deferred_player_shell(title: str, iframe_url: str, poster_url: str) -> str:
+    safe_title = escape(title, quote=True)
+    safe_iframe_url = escape(iframe_url, quote=True)
+    safe_poster_url = escape(poster_url, quote=True)
+    return (
+        '<div class="player-shell arcade-player-shell player-shell-deferred" data-player-loaded="false" data-player-shell="" id="playerShell">'
+        f'<iframe allow="fullscreen *; gamepad *" class="player-frame arcade-player-frame" data-iframe-src="{safe_iframe_url}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="about:blank" title="{safe_title}"></iframe>'
+        '<div class="player-poster" data-player-poster="">'
+        '<div class="player-poster-content">'
+        '<div class="player-poster-copy-wrap">'
+        '<p class="player-poster-kicker">Fast first load</p>'
+        f'<h2 class="player-poster-title">Load {escape(title)} when you are ready to play.</h2>'
+        '<p class="player-poster-copy">Keep the page lighter while you scan the guide, then launch the live build in place or open the full game in a separate tab.</p>'
+        '<div class="player-poster-actions">'
+        '<button class="button button-primary" data-load-player="#playerShell" data-load-player-default="Play in Page" data-load-player-loading="Loading..." type="button">Play in Page</button>'
+        f'<a class="button button-ghost" href="{safe_iframe_url}" rel="noreferrer" target="_blank">Open Full Game</a>'
+        "</div>"
+        "</div>"
+        '<div class="player-poster-thumb">'
+        f'<img alt="{safe_title} preview" class="player-poster-media" decoding="async" loading="eager" src="{safe_poster_url}"/>'
+        "</div>"
+        "</div>"
+        "</div>"
+        "</div>"
+    )
+
+
 def build_keywords(entry: dict, group_label: str, scene_label: str, intent_label: str) -> str:
     categories = [sentence_case_token(value) for value in entry.get("categories", [])[:4]]
     raw = [
@@ -526,9 +553,7 @@ def render_page(entry: dict, context: RenderContext) -> str:
 <section class="section detail-stage" id="play">
 <div class="arcade-stage detail-stage-grid">
 <div class="arcade-main detail-main-column">
-<div class="player-shell arcade-player-shell" id="playerShell">
-<iframe allow="fullscreen *; gamepad *" class="player-frame arcade-player-frame" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="{escape(entry["iframeUrl"], quote=True)}" title="{escape(title, quote=True)}"></iframe>
-</div>
+{render_deferred_player_shell(title, entry["iframeUrl"], entry["thumb"])}
 {player_strip}
 <div class="arcade-titlebar detail-titlebar">
 <div>
