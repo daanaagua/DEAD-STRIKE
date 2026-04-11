@@ -117,11 +117,17 @@ def resolve_iframe_url(iframe_srcs: list[str], canonical_urls: list[str]) -> str
             return src
 
     html5_candidates = [url for url in normalized_canonicals if url.startswith(HTML5_PREFIX)]
-    for src in normalized_iframes:
-        if src.startswith(UNCACHED_PREFIX):
-            for candidate in html5_candidates:
-                if same_game_path(src, candidate):
-                    return candidate
+    uncached_iframes = [src for src in normalized_iframes if src.startswith(UNCACHED_PREFIX)]
+    for src in uncached_iframes:
+        for candidate in html5_candidates:
+            if same_game_path(src, candidate):
+                return candidate
+
+    if uncached_iframes and html5_candidates:
+        raise ValueError(
+            "Could not resolve canonical iframe URL from source page HTML; "
+            f"iframe src {uncached_iframes[0]!r} had no matching html5 candidate"
+        )
 
     if html5_candidates:
         return html5_candidates[0]

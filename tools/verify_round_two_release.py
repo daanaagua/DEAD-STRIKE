@@ -5,6 +5,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
+try:
+    from tools.build_round_two_manifest import extract_embed_fields, fetch_html
+except ModuleNotFoundError:
+    from build_round_two_manifest import extract_embed_fields, fetch_html
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE_FILE = ROOT / "tools" / "round_two_sources.json"
@@ -476,7 +481,17 @@ def validate_source_payload(data: Any, errors: list[str]) -> None:
         validate_bucket(bucket_name, data.get(bucket_name), expected_items, errors)
 
 
-def validate_manifest_media_fields(bucket_name: str, item: Any, errors: list[str]) -> None:
+def resolve_manifest_media_for_source_page(source_page: str) -> dict[str, str]:
+    html = fetch_html(source_page)
+    return extract_embed_fields(html)
+
+
+def validate_manifest_media_fields(
+    bucket_name: str,
+    item: Any,
+    expected_item: dict[str, Any] | None,
+    errors: list[str],
+) -> None:
     if not isinstance(item, dict):
         return
 
@@ -499,6 +514,29 @@ def validate_manifest_media_fields(bucket_name: str, item: Any, errors: list[str
             f"{bucket_name} slug '{slug_label}' thumb must start with '{EXPECTED_THUMB_PREFIX}'"
         )
 
+    if expected_item is None:
+        return
+
+    if not isinstance(iframe_url, str) or not iframe_url.strip():
+        return
+    if not isinstance(thumb, str) or not thumb.strip():
+        return
+    if not iframe_url.startswith(EXPECTED_IFRAME_PREFIX) or not thumb.startswith(EXPECTED_THUMB_PREFIX):
+        return
+
+    try:
+        expected_media = resolve_manifest_media_for_source_page(expected_item["sourcePage"])
+    except Exception as exc:
+        errors.append(
+            f"{bucket_name} slug '{slug_label}' could not resolve expected media from frozen sourcePage: {exc}"
+        )
+        return
+
+    if iframe_url != expected_media["iframeUrl"]:
+        add_frozen_field_error(bucket_name, slug_label, "iframeUrl", iframe_url, expected_media["iframeUrl"], errors)
+    if thumb != expected_media["thumb"]:
+        add_frozen_field_error(bucket_name, slug_label, "thumb", thumb, expected_media["thumb"], errors)
+
 
 def validate_manifest_payload(data: Any, errors: list[str]) -> None:
     if not isinstance(data, dict):
@@ -516,7 +554,9 @@ def validate_manifest_payload(data: Any, errors: list[str]) -> None:
         validate_bucket(bucket_name, bucket, expected_items, errors)
         if isinstance(bucket, list):
             for item in bucket:
-                validate_manifest_media_fields(bucket_name, item, errors)
+                slug = item.get("slug") if isinstance(item, dict) else None
+                expected_item = expected_items.get(slug) if isinstance(slug, str) else None
+                validate_manifest_media_fields(bucket_name, item, expected_item, errors)
 
 
 def parse_args() -> argparse.Namespace:
