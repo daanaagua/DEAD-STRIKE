@@ -555,18 +555,12 @@ def main() -> int:
         validate_manifest_payload(manifest_data, errors)
 
     if errors:
-        if args.manifest:
-            print("ROUND_TWO_RELEASE_VERIFICATION_FAILED")
-        else:
-            print("ROUND_TWO_SOURCE_LIST_VERIFICATION_FAILED")
+        print("ROUND_TWO_SOURCE_LIST_VERIFICATION_FAILED")
         for error in errors:
             print(f"- {error}")
         return 1
 
-    if args.manifest:
-        print("ROUND_TWO_RELEASE_VERIFIED")
-    else:
-        print("ROUND_TWO_SOURCE_LIST_VERIFIED")
+    print("ROUND_TWO_SOURCE_LIST_VERIFIED")
     return 0
 
 
