@@ -39,6 +39,9 @@ FALLBACK_MINIMUMS = {
     "shooter": 12,
 }
 
+ROUND_TWO_RELEASE_GROUP = "expansion-2026-04"
+ROUND_TWO_EXPECTED = 22
+
 REPRESENTATIVE_PAGE_SLUGS = [
     "dead-strike",
     "sniper-master",
@@ -315,8 +318,31 @@ def validate_category_page_live_targets(category_pages: dict, games: list[dict],
             game = games_by_slug.get(slug)
             if not game:
                 continue
+            if game.get("isLive"):
+                continue
+            if game.get("releaseGroup") == ROUND_TWO_RELEASE_GROUP:
+                continue
             if not game.get("isLive"):
                 errors.append(f"categoryPages['{page_name}'] slug '{slug}' must point to a live game")
+
+
+def validate_round_two_inventory(games: list[dict], errors: list[str]) -> None:
+    round_two_games = [
+        game
+        for game in games
+        if isinstance(game, dict) and game.get("releaseGroup") == ROUND_TWO_RELEASE_GROUP
+    ]
+
+    if len(round_two_games) != ROUND_TWO_EXPECTED:
+        errors.append(
+            f"Expected {ROUND_TWO_EXPECTED} round-two games in releaseGroup '{ROUND_TWO_RELEASE_GROUP}', found {len(round_two_games)}"
+        )
+
+    live_round_two = [game.get("slug") for game in round_two_games if game.get("isLive")]
+    if live_round_two:
+        errors.append(
+            f"Round-two games must stay staged with isLive=false, found live slugs: {', '.join(sorted(live_round_two))}"
+        )
 
 
 def dedupe_live_games(slugs: list[str], games_by_slug: dict[str, dict], exclude_canonical_slugs: set[str], limit: int) -> list[dict]:
@@ -488,6 +514,7 @@ def main() -> int:
     validate_render_rules(library, errors)
     validate_canonical_targets(games, errors)
     validate_required_inventory(slug_set, errors)
+    validate_round_two_inventory(games, errors)
     validate_category_pages(library.get("categoryPages"), slug_set, errors)
     validate_category_page_live_targets(library.get("categoryPages"), games, errors)
     validate_live_files(Path(args.library).resolve().parent, games, errors)

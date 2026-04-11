@@ -840,6 +840,512 @@ window.DEAD_STRIKE_LIBRARY = {
         "fort-clash-survival"
       ],
       "isLive": true
+    },
+    {
+      "slug": "fps-shooting-game-3d-gun-game",
+      "title": "FPS Shooting Game: 3D Gun Game",
+      "href": "/fps-shooting-game-3d-gun-game/",
+      "iframeUrl": "https://html5.gamemonetize.games/brlo27b6436ff8upmd5e8awfzxpikovi/",
+      "thumb": "https://img.gamemonetize.com/brlo27b6436ff8upmd5e8awfzxpikovi/512x384.jpg",
+      "categories": [
+        "fps",
+        "shooter",
+        "military",
+        "tactical"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "special-forces-war-zombie-attack",
+        "call-of-ops-3-zombies"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "infantry-attack-battle-3d-fps",
+      "title": "Infantry Attack:Battle 3D FPS",
+      "href": "/infantry-attack-battle-3d-fps/",
+      "iframeUrl": "https://html5.gamemonetize.games/foof3euvtu1r928pcec4j0vtslnqqqy6/",
+      "thumb": "https://img.gamemonetize.com/foof3euvtu1r928pcec4j0vtslnqqqy6/512x384.jpg",
+      "categories": [
+        "fps",
+        "battle",
+        "assault",
+        "squad"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "fps-shooting-game-3d-gun-game",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "special-forces-war-zombie-attack",
+        "call-of-ops-3-zombies"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "duty-call-modern-warfate-2",
+      "title": "Duty Call Modern Warfate 2",
+      "href": "/duty-call-modern-warfate-2/",
+      "iframeUrl": "https://html5.gamemonetize.games/i1h4zxt1z2bfk78s3xxbkhxon6pepuw7/",
+      "thumb": "https://img.gamemonetize.com/i1h4zxt1z2bfk78s3xxbkhxon6pepuw7/512x384.jpg",
+      "categories": [
+        "fps",
+        "military",
+        "campaign",
+        "modern-war"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "special-forces-war-zombie-attack",
+        "call-of-ops-3-zombies"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "command-strike-fps-2",
+      "title": "Command Strike FPS 2",
+      "href": "/command-strike-fps-2/",
+      "iframeUrl": "https://html5.gamemonetize.games/fiogowuzog6jowbgvabdxrcqaub4cubc/",
+      "thumb": "https://img.gamemonetize.com/fiogowuzog6jowbgvabdxrcqaub4cubc/512x384.jpg",
+      "categories": [
+        "fps",
+        "command",
+        "strike",
+        "counterforce"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "cod-duty-call-fps",
+        "special-forces-war-zombie-attack",
+        "call-of-ops-3-zombies"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "cod-duty-call-fps",
+      "title": "COD Duty Call FPS",
+      "href": "/cod-duty-call-fps/",
+      "iframeUrl": "https://html5.gamemonetize.games/rc0aptuuleju6xnlpeds38lisqpz1hzu/",
+      "thumb": "https://img.gamemonetize.com/rc0aptuuleju6xnlpeds38lisqpz1hzu/512x384.jpg",
+      "categories": [
+        "fps",
+        "combat",
+        "guns",
+        "mission"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "special-forces-war-zombie-attack",
+        "call-of-ops-3-zombies"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "special-forces-war-zombie-attack",
+      "title": "Special Forces War Zombie Attack",
+      "href": "/special-forces-war-zombie-attack/",
+      "iframeUrl": "https://html5.gamemonetize.games/5q3qwdjjx99e4fdh1jsaqymuqn49ar6r/",
+      "thumb": "https://img.gamemonetize.com/5q3qwdjjx99e4fdh1jsaqymuqn49ar6r/512x384.jpg",
+      "categories": [
+        "fps",
+        "special-forces",
+        "zombie",
+        "survival"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "call-of-ops-3-zombies"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "shooterz-io",
+      "title": "ShooterZ.io",
+      "href": "/shooterz-io/",
+      "iframeUrl": "https://html5.gamemonetize.games/6x8pxf5ylzyu7e1nk19hddg7dl71vb01/",
+      "thumb": "https://img.gamemonetize.com/6x8pxf5ylzyu7e1nk19hddg7dl71vb01/512x384.jpg",
+      "categories": [
+        "multiplayer",
+        "arena",
+        "io",
+        "shooter"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "blocky-siege",
+        "moon-clash-heroes",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "battledudes-io",
+        "subway-clash-3d"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "blocky-siege",
+      "title": "Blocky Siege",
+      "href": "/blocky-siege/",
+      "iframeUrl": "https://html5.gamemonetize.games/udk0fqa59dkuxfajhd8hhfpxs1d1wsxu/",
+      "thumb": "https://img.gamemonetize.com/udk0fqa59dkuxfajhd8hhfpxs1d1wsxu/512x384.jpg",
+      "categories": [
+        "multiplayer",
+        "blocky",
+        "arena",
+        "pvp"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "shooterz-io",
+        "moon-clash-heroes",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "battledudes-io",
+        "subway-clash-3d"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "moon-clash-heroes",
+      "title": "Moon Clash Heroes",
+      "href": "/moon-clash-heroes/",
+      "iframeUrl": "https://html5.gamemonetize.games/acm3bzd9zph8x0iv49k2wm88ir69mbxx/",
+      "thumb": "https://img.gamemonetize.com/acm3bzd9zph8x0iv49k2wm88ir69mbxx/512x384.jpg",
+      "categories": [
+        "multiplayer",
+        "heroes",
+        "arena",
+        "sci-fi"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "shooterz-io",
+        "blocky-siege",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "battledudes-io",
+        "subway-clash-3d"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "nightwalkers-io",
+      "title": "Nightwalkers.io",
+      "href": "/nightwalkers-io/",
+      "iframeUrl": "https://html5.gamemonetize.games/99mi8patiemjg6ns0m4apjv6p92csyt2/",
+      "thumb": "https://img.gamemonetize.com/99mi8patiemjg6ns0m4apjv6p92csyt2/512x384.jpg",
+      "categories": [
+        "multiplayer",
+        "io",
+        "survival",
+        "night-battle"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "shooterz-io",
+        "blocky-siege",
+        "moon-clash-heroes",
+        "combat-zombie-warfare",
+        "battledudes-io",
+        "subway-clash-3d"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "combat-zombie-warfare",
+      "title": "Combat Zombie Warfare",
+      "href": "/combat-zombie-warfare/",
+      "iframeUrl": "https://html5.gamemonetize.games/4yo3n4ozaubytl1p1nmj01nuhqyn0mn5/",
+      "thumb": "https://img.gamemonetize.com/4yo3n4ozaubytl1p1nmj01nuhqyn0mn5/512x384.jpg",
+      "categories": [
+        "multiplayer",
+        "zombie",
+        "arena",
+        "co-op"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "shooterz-io",
+        "blocky-siege",
+        "moon-clash-heroes",
+        "nightwalkers-io",
+        "battledudes-io",
+        "subway-clash-3d"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "sniper-mission-war",
+      "title": "Sniper Mission War",
+      "href": "/sniper-mission-war/",
+      "iframeUrl": "https://html5.gamemonetize.games/lgrku412hrxdytv220yo4lr2ugh8sb6j/",
+      "thumb": "https://img.gamemonetize.com/lgrku412hrxdytv220yo4lr2ugh8sb6j/512x384.jpg",
+      "categories": [
+        "sniper",
+        "precision",
+        "warfare",
+        "mission"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "sniper-ghost-shooter",
+        "sniper-shot-3d",
+        "urban-sniper-multiplayer",
+        "sniper-master",
+        "counter-craft-sniper",
+        "sniper-clash-3d"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "sniper-ghost-shooter",
+      "title": "Sniper Ghost Shooter",
+      "href": "/sniper-ghost-shooter/",
+      "iframeUrl": "https://html5.gamemonetize.games/in6rnuyshq6yt2z2rwnpfslcg1xacyqi/",
+      "thumb": "https://img.gamemonetize.com/in6rnuyshq6yt2z2rwnpfslcg1xacyqi/512x384.jpg",
+      "categories": [
+        "sniper",
+        "stealth",
+        "ghost",
+        "elimination"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "sniper-mission-war",
+        "sniper-shot-3d",
+        "urban-sniper-multiplayer",
+        "sniper-master",
+        "counter-craft-sniper",
+        "sniper-clash-3d"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "sniper-shot-3d",
+      "title": "Sniper Shot 3D",
+      "href": "/sniper-shot-3d/",
+      "iframeUrl": "https://html5.gamemonetize.games/rweudmo4b1aj1yt8mx0xkcfgc4lhhnn9/",
+      "thumb": "https://img.gamemonetize.com/rweudmo4b1aj1yt8mx0xkcfgc4lhhnn9/512x384.jpg",
+      "categories": [
+        "sniper",
+        "3d",
+        "aim",
+        "precision"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "sniper-mission-war",
+        "sniper-ghost-shooter",
+        "urban-sniper-multiplayer",
+        "sniper-master",
+        "counter-craft-sniper",
+        "sniper-clash-3d"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "urban-sniper-multiplayer",
+      "title": "Urban Sniper Multiplayer",
+      "href": "/urban-sniper-multiplayer/",
+      "iframeUrl": "https://html5.gamemonetize.games/v6mez3gdl9836lk86u790ucw0hgyz77u/",
+      "thumb": "https://img.gamemonetize.com/v6mez3gdl9836lk86u790ucw0hgyz77u/512x384.jpg",
+      "categories": [
+        "sniper",
+        "multiplayer",
+        "urban",
+        "pvp"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "sniper-mission-war",
+        "sniper-ghost-shooter",
+        "sniper-shot-3d",
+        "sniper-master",
+        "counter-craft-sniper",
+        "sniper-clash-3d"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "zombie-defense-war-z-survival",
+      "title": "Zombie defense: War Z Survival",
+      "href": "/zombie-defense-war-z-survival/",
+      "iframeUrl": "https://html5.gamemonetize.games/sj7s1t0c6x9u5k021ne0tp7wi3q90b5q/",
+      "thumb": "https://img.gamemonetize.com/sj7s1t0c6x9u5k021ne0tp7wi3q90b5q/512x384.jpg",
+      "categories": [
+        "zombie",
+        "defense",
+        "survival",
+        "base-defense"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "zombie-defense-last-stand",
+        "grand-zombie-swarm",
+        "zombie-vacation-2",
+        "zombie-last-guard",
+        "biozombie-outbreak",
+        "dead-strike"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "zombie-defense-last-stand",
+      "title": "Zombie Defense: Last Stand",
+      "href": "/zombie-defense-last-stand/",
+      "iframeUrl": "https://html5.gamemonetize.games/zjyt0g4rnl8v44qxt0gw4umcyzyqoxjv/",
+      "thumb": "https://img.gamemonetize.com/zjyt0g4rnl8v44qxt0gw4umcyzyqoxjv/512x384.jpg",
+      "categories": [
+        "zombie",
+        "defense",
+        "last-stand",
+        "apocalypse"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "zombie-defense-war-z-survival",
+        "grand-zombie-swarm",
+        "zombie-vacation-2",
+        "zombie-last-guard",
+        "biozombie-outbreak",
+        "dead-strike"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "grand-zombie-swarm",
+      "title": "Grand Zombie Swarm",
+      "href": "/grand-zombie-swarm/",
+      "iframeUrl": "https://html5.gamemonetize.games/e2ulet2hqtqshpt1ssijn6ashkljjedy/",
+      "thumb": "https://img.gamemonetize.com/e2ulet2hqtqshpt1ssijn6ashkljjedy/512x384.jpg",
+      "categories": [
+        "zombie",
+        "swarm",
+        "defense",
+        "horde"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "zombie-defense-war-z-survival",
+        "zombie-defense-last-stand",
+        "zombie-vacation-2",
+        "zombie-last-guard",
+        "biozombie-outbreak",
+        "dead-strike"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "zombie-vacation-2",
+      "title": "Zombie Vacation 2",
+      "href": "/zombie-vacation-2/",
+      "iframeUrl": "https://html5.gamemonetize.games/i6p9zo018e141anwiop9ocqee064272h/",
+      "thumb": "https://img.gamemonetize.com/i6p9zo018e141anwiop9ocqee064272h/512x384.jpg",
+      "categories": [
+        "zombie",
+        "survival",
+        "vacation",
+        "defense"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "zombie-defense-war-z-survival",
+        "zombie-defense-last-stand",
+        "grand-zombie-swarm",
+        "zombie-last-guard",
+        "biozombie-outbreak",
+        "dead-strike"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "zombie-shooter-3d",
+      "title": "Zombie Shooter 3D",
+      "href": "/zombie-shooter-3d/",
+      "iframeUrl": "https://html5.gamemonetize.games/zsihrh51ux1aahka9t4u5nciouwn5nut/",
+      "thumb": "https://img.gamemonetize.com/zsihrh51ux1aahka9t4u5nciouwn5nut/512x384.jpg",
+      "categories": [
+        "zombie",
+        "shooter",
+        "3d",
+        "action"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "zombie-survival-pixel-apocalypse",
+        "pixel-multiplayer-survival-zombie",
+        "pixel-zombie-survival",
+        "multigun-arena-zombie-survival",
+        "zombie-survival-last-stand",
+        "dead-strike"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "zombie-survival-pixel-apocalypse",
+      "title": "Zombie Survival Pixel Apocalypse",
+      "href": "/zombie-survival-pixel-apocalypse/",
+      "iframeUrl": "https://html5.gamemonetize.games/m4hgk0yg3zkyr0nacp2qtmbsd8nnv3yu/",
+      "thumb": "https://img.gamemonetize.com/m4hgk0yg3zkyr0nacp2qtmbsd8nnv3yu/512x384.jpg",
+      "categories": [
+        "zombie",
+        "pixel",
+        "survival",
+        "apocalypse"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "zombie-shooter-3d",
+        "pixel-multiplayer-survival-zombie",
+        "pixel-zombie-survival",
+        "multigun-arena-zombie-survival",
+        "zombie-survival-last-stand",
+        "dead-strike"
+      ],
+      "isLive": false
+    },
+    {
+      "slug": "pixel-multiplayer-survival-zombie",
+      "title": "Pixel multiplayer survival zombie",
+      "href": "/pixel-multiplayer-survival-zombie/",
+      "iframeUrl": "https://html5.gamemonetize.games/jjfm4i2vgp0qaqoy58l8cfhxhqmlg2lx/",
+      "thumb": "https://img.gamemonetize.com/jjfm4i2vgp0qaqoy58l8cfhxhqmlg2lx/512x384.jpg",
+      "categories": [
+        "pixel",
+        "multiplayer",
+        "zombie",
+        "survival"
+      ],
+      "releaseGroup": "expansion-2026-04",
+      "related": [
+        "zombie-shooter-3d",
+        "zombie-survival-pixel-apocalypse",
+        "pixel-zombie-survival",
+        "multigun-arena-zombie-survival",
+        "zombie-survival-last-stand",
+        "dead-strike"
+      ],
+      "isLive": false
     }
   ],
   "pools": {
@@ -898,7 +1404,16 @@ window.DEAD_STRIKE_LIBRARY = {
         "pubg-hack",
         "battledudes-io",
         "counter-craft-sniper",
-        "urban-sniper-multiplayer-2"
+        "urban-sniper-multiplayer-2",
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "special-forces-war-zombie-attack",
+        "shooterz-io",
+        "blocky-siege",
+        "sniper-mission-war"
       ],
       "zombie": [
         "dead-strike",
@@ -921,7 +1436,17 @@ window.DEAD_STRIKE_LIBRARY = {
         "noob-vs-zombie-2",
         "minecraft-noob-vs-zombies-3",
         "dusk-warz",
-        "space-adventure-noobiks-battle-vs-zombies"
+        "space-adventure-noobiks-battle-vs-zombies",
+        "special-forces-war-zombie-attack",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "zombie-defense-war-z-survival",
+        "zombie-defense-last-stand",
+        "grand-zombie-swarm",
+        "zombie-vacation-2",
+        "zombie-shooter-3d",
+        "zombie-survival-pixel-apocalypse",
+        "pixel-multiplayer-survival-zombie"
       ],
       "sniper": [
         "sniper-master",
@@ -931,7 +1456,11 @@ window.DEAD_STRIKE_LIBRARY = {
         "lone-wolf-strike",
         "pubg-hack",
         "battledudes-io",
-        "blocky-combat-swat-original-2026"
+        "blocky-combat-swat-original-2026",
+        "sniper-mission-war",
+        "sniper-ghost-shooter",
+        "sniper-shot-3d",
+        "urban-sniper-multiplayer"
       ],
       "shooter": [
         "dead-strike",
@@ -958,7 +1487,29 @@ window.DEAD_STRIKE_LIBRARY = {
         "super-cat-free-fire",
         "space-adventure-noobiks-battle-vs-zombies",
         "edge-of-survival",
-        "challenge-the-zombies"
+        "challenge-the-zombies",
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "special-forces-war-zombie-attack",
+        "shooterz-io",
+        "blocky-siege",
+        "moon-clash-heroes",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "sniper-mission-war",
+        "sniper-ghost-shooter",
+        "sniper-shot-3d",
+        "urban-sniper-multiplayer",
+        "zombie-defense-war-z-survival",
+        "zombie-defense-last-stand",
+        "grand-zombie-swarm",
+        "zombie-vacation-2",
+        "zombie-shooter-3d",
+        "zombie-survival-pixel-apocalypse",
+        "pixel-multiplayer-survival-zombie"
       ],
       "liveLibrary": [
         "dead-strike",
@@ -996,7 +1547,29 @@ window.DEAD_STRIKE_LIBRARY = {
         "dusk-warz",
         "challenge-the-zombies",
         "blocky-combat-swat-original-2026",
-        "battledudes-io"
+        "battledudes-io",
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "special-forces-war-zombie-attack",
+        "shooterz-io",
+        "blocky-siege",
+        "moon-clash-heroes",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "sniper-mission-war",
+        "sniper-ghost-shooter",
+        "sniper-shot-3d",
+        "urban-sniper-multiplayer",
+        "zombie-defense-war-z-survival",
+        "zombie-defense-last-stand",
+        "grand-zombie-swarm",
+        "zombie-vacation-2",
+        "zombie-shooter-3d",
+        "zombie-survival-pixel-apocalypse",
+        "pixel-multiplayer-survival-zombie"
       ]
     }
   },
@@ -1027,7 +1600,17 @@ window.DEAD_STRIKE_LIBRARY = {
         "noob-vs-zombie-2",
         "minecraft-noob-vs-zombies-3",
         "dusk-warz",
-        "space-adventure-noobiks-battle-vs-zombies"
+        "space-adventure-noobiks-battle-vs-zombies",
+        "special-forces-war-zombie-attack",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "zombie-defense-war-z-survival",
+        "zombie-defense-last-stand",
+        "grand-zombie-swarm",
+        "zombie-vacation-2",
+        "zombie-shooter-3d",
+        "zombie-survival-pixel-apocalypse",
+        "pixel-multiplayer-survival-zombie"
       ]
     },
     "fps-games": {
@@ -1049,7 +1632,15 @@ window.DEAD_STRIKE_LIBRARY = {
         "counter-craft-sniper",
         "urban-sniper-multiplayer-2",
         "sniper-clash-3d",
-        "lone-wolf-strike"
+        "lone-wolf-strike",
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "shooterz-io",
+        "blocky-siege",
+        "sniper-mission-war"
       ]
     },
     "shooter-games": {
@@ -1082,7 +1673,29 @@ window.DEAD_STRIKE_LIBRARY = {
         "minewar-soldiers-vs-zombies",
         "zombie-last-guard",
         "edge-of-survival",
-        "challenge-the-zombies"
+        "challenge-the-zombies",
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "special-forces-war-zombie-attack",
+        "shooterz-io",
+        "blocky-siege",
+        "moon-clash-heroes",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "sniper-mission-war",
+        "sniper-ghost-shooter",
+        "sniper-shot-3d",
+        "urban-sniper-multiplayer",
+        "zombie-defense-war-z-survival",
+        "zombie-defense-last-stand",
+        "grand-zombie-swarm",
+        "zombie-vacation-2",
+        "zombie-shooter-3d",
+        "zombie-survival-pixel-apocalypse",
+        "pixel-multiplayer-survival-zombie"
       ]
     }
   },
