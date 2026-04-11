@@ -14,6 +14,12 @@
 - [FPS Games](https://dead-strike.com/games/fps-games/): Category page focused on first-person shooter browser games related to Dead Strike intent.
 - [Shooter Games](https://dead-strike.com/games/shooter-games/): Collection page for browser shooter games covering arcade, tactical, sniper, and survival styles.
 
+## Specialized Hubs
+
+- [Sniper Games](https://dead-strike.com/games/sniper-games/): Narrower hub for browser sniper missions, overwatch routes, and precision-led PvP pages.
+- [Zombie Defense Games](https://dead-strike.com/games/zombie-defense-games/): Last-stand zombie hub for wave-hold, barricade, and bunker-style browser survival routes.
+- [Multiplayer Shooter Games](https://dead-strike.com/games/multiplayer-shooter-games/): Online combat hub for browser PvP, co-op survival, and arena shooter pages.
+
 ## Round-Two Tactical FPS
 
 - [FPS Shooting Game: 3D Gun Game](https://dead-strike.com/fps-shooting-game-3d-gun-game/): Tactical browser FPS page centered on urban firefights and modern commando pacing.
@@ -56,12 +62,20 @@
 - [MultiGun Arena Zombie Survival](https://dead-strike.com/multigun-arena-zombie-survival/): Browser zombie arena shooter page with similar survival and weapon-upgrade intent.
 - [Noob vs Zombie](https://dead-strike.com/noob-vs-zombie/): Zombie-themed browser action page for lighter, casual comparisons inside the catalog.
 
+## Trust Pages
+
+- [About](https://dead-strike.com/about/): Site overview covering mission, structure, and how the browser shooter catalog is organized.
+- [Contact](https://dead-strike.com/contact/): Public request path for technical issues, corrections, and policy questions.
+- [Privacy Policy](https://dead-strike.com/privacy-policy/): Privacy notes covering analytics and embedded third-party game hosts.
+- [Terms of Use](https://dead-strike.com/terms/): Site-use terms covering static-page scope and third-party embed limits.
+- [Editorial Policy](https://dead-strike.com/editorial-policy/): Editorial standards for page selection, categorization, updates, and corrections.
+
 ## Key Facts
 
 - Primary entity: Dead Strike, a browser-playable zombie FPS
 - Core user intent: play online without download
 - Main themes: zombie waves, first-person shooting, weapon unlocks, instant browser access, related shooter discovery
-- Supporting navigation: zombie, FPS, and shooter hubs plus tactical FPS, sniper, multiplayer arena, and zombie-defense detail clusters
+- Supporting navigation: zombie, FPS, shooter, sniper, zombie-defense, and multiplayer-shooter hubs plus trust and policy pages
 - Best canonical page for exact-match Dead Strike intent: https://dead-strike.com/
 - Best page for broad catalog discovery: https://dead-strike.com/games/
 - Canonical sitemap: https://dead-strike.com/sitemap.xml

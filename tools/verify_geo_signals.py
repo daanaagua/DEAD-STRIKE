@@ -18,11 +18,55 @@ LLMS = ROOT / "llms.txt"
 REQUIRED_LLMS_SECTIONS = [
     "## Core Pages",
     "## Category Hubs",
+    "## Specialized Hubs",
     "## Round-Two Tactical FPS",
     "## Round-Two Multiplayer Arena",
     "## Round-Two Sniper",
     "## Round-Two Zombie Defense",
+    "## Trust Pages",
     "## Key Facts",
+]
+STATIC_PAGE_EXPECTATIONS = [
+    {
+        "path": ROOT / "about" / "index.html",
+        "canonical": "https://dead-strike.com/about/",
+        "types": {"AboutPage", "Organization", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "contact" / "index.html",
+        "canonical": "https://dead-strike.com/contact/",
+        "types": {"ContactPage", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "privacy-policy" / "index.html",
+        "canonical": "https://dead-strike.com/privacy-policy/",
+        "types": {"WebPage", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "terms" / "index.html",
+        "canonical": "https://dead-strike.com/terms/",
+        "types": {"WebPage", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "editorial-policy" / "index.html",
+        "canonical": "https://dead-strike.com/editorial-policy/",
+        "types": {"WebPage", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "games" / "sniper-games" / "index.html",
+        "canonical": "https://dead-strike.com/games/sniper-games/",
+        "types": {"CollectionPage", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "games" / "zombie-defense-games" / "index.html",
+        "canonical": "https://dead-strike.com/games/zombie-defense-games/",
+        "types": {"CollectionPage", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "games" / "multiplayer-shooter-games" / "index.html",
+        "canonical": "https://dead-strike.com/games/multiplayer-shooter-games/",
+        "types": {"CollectionPage", "BreadcrumbList"},
+    },
 ]
 TAG_PATTERN = re.compile(r"<(meta|link)\b[^>]*>", re.I)
 ATTR_PATTERN = re.compile(r'([:\w-]+)\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s>]+))', re.I)
@@ -89,6 +133,38 @@ def fail(errors: list[str]) -> int:
     return 1
 
 
+def verify_static_pages(errors: list[str]) -> None:
+    for page in STATIC_PAGE_EXPECTATIONS:
+        path = page["path"]
+        if not path.exists():
+            errors.append(f"missing static GEO page '{path}'")
+            continue
+
+        html = path.read_text(encoding="utf-8")
+        canonical_href = find_tag_attr(html, "link", "rel", "canonical", "href")
+        if canonical_href != page["canonical"]:
+            errors.append(f"{path}: canonical must be {page['canonical']}")
+
+        description = find_tag_attr(html, "meta", "name", "description", "content")
+        if not description:
+            errors.append(f"{path}: missing meta description")
+
+        payloads = parse_json_ld(html)
+        types = {payload.get("@type") for payload in payloads}
+        for needed_type in page["types"]:
+            if needed_type not in types:
+                errors.append(f"{path}: missing {needed_type} structured data")
+
+        breadcrumb = next((payload for payload in payloads if payload.get("@type") == "BreadcrumbList"), None)
+        if breadcrumb is None:
+            continue
+        items = breadcrumb.get("itemListElement", [])
+        if not isinstance(items, list) or len(items) < 2:
+            errors.append(f"{path}: breadcrumb must contain at least Home and current page")
+        elif items[-1].get("item") != page["canonical"]:
+            errors.append(f"{path}: breadcrumb last item must match canonical")
+
+
 def main() -> int:
     errors: list[str] = []
     library = load_library(ROOT / "game-library.js")
@@ -104,6 +180,8 @@ def main() -> int:
     for section in REQUIRED_LLMS_SECTIONS:
         if section not in llms_text:
             errors.append(f"llms.txt missing section '{section}'")
+
+    verify_static_pages(errors)
 
     for game in library.get("games", []):
         if not isinstance(game, dict):
