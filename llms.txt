@@ -1,16 +1,54 @@
 # DEAD STRIKE
 
-> Browser zombie FPS site where players can play Dead Strike online instantly and discover related shooter and survival games.
+> Browser zombie FPS site for instant play, related shooter discovery, and category-led browsing across zombie, FPS, sniper, arena, and defense game routes.
 
-## Docs
+## Core Pages
 
 - [Dead Strike](https://dead-strike.com/): Main playable page for Dead Strike with browser access, controls, gameplay overview, and direct links to the full game tab.
 - [Games Hub](https://dead-strike.com/games/): Landing page for the site's broader browser game catalog, organized around shooter and survival discovery.
+- [404 Page](https://dead-strike.com/404.html): Fallback route that pushes users back into the live games directory and primary category hubs.
+
+## Category Hubs
+
 - [Zombie Games](https://dead-strike.com/games/zombie-games/): Category page collecting browser zombie games and adjacent undead survival titles.
 - [FPS Games](https://dead-strike.com/games/fps-games/): Category page focused on first-person shooter browser games related to Dead Strike intent.
-- [Shooter Games](https://dead-strike.com/games/shooter-games/): Collection page for browser shooter games covering arcade, tactical, and survival styles.
+- [Shooter Games](https://dead-strike.com/games/shooter-games/): Collection page for browser shooter games covering arcade, tactical, sniper, and survival styles.
 
-## Related Games
+## Round-Two Tactical FPS
+
+- [FPS Shooting Game: 3D Gun Game](https://dead-strike.com/fps-shooting-game-3d-gun-game/): Tactical browser FPS page centered on urban firefights and modern commando pacing.
+- [Infantry Attack:Battle 3D FPS](https://dead-strike.com/infantry-attack-battle-3d-fps/): Browser FPS mission page built around frontline push pressure and military assault intent.
+- [Duty Call Modern Warfate 2](https://dead-strike.com/duty-call-modern-warfate-2/): Modern-war browser FPS route focused on mission flow and special-ops pacing.
+- [Command Strike FPS 2](https://dead-strike.com/command-strike-fps-2/): Fast tactical FPS page built around breach-and-clear tempo and short browser restarts.
+- [COD Duty Call FPS](https://dead-strike.com/cod-duty-call-fps/): Browser military shooter page for players seeking direct firefights and loadout-driven gunplay.
+- [Special Forces War Zombie Attack](https://dead-strike.com/special-forces-war-zombie-attack/): Hybrid zombie FPS page combining military combat language with undead pressure.
+
+## Round-Two Multiplayer Arena
+
+- [ShooterZ.io](https://dead-strike.com/shooterz-io/): Multiplayer arena shooter page for drop-in browser duels and open-map firefights.
+- [Blocky Siege](https://dead-strike.com/blocky-siege/): Voxel arena shooter page centered on teamfights, peeking, and multiplayer pressure.
+- [Moon Clash Heroes](https://dead-strike.com/moon-clash-heroes/): Hero-style browser shooter page built around sci-fi arena combat.
+- [Nightwalkers.io](https://dead-strike.com/nightwalkers-io/): Dark multiplayer survival shooter page for haunted-street chaos and online firefights.
+- [Combat Zombie Warfare](https://dead-strike.com/combat-zombie-warfare/): Multiplayer zombie combat page for squad-vs-undead browser matches.
+
+## Round-Two Sniper
+
+- [Sniper Mission War](https://dead-strike.com/sniper-mission-war/): Precision browser sniper page built around battlefield overwatch and mission-based marksmanship.
+- [Sniper Ghost Shooter](https://dead-strike.com/sniper-ghost-shooter/): Stealth-leaning sniper page for shadowy maps and quiet takedowns.
+- [Sniper Shot 3D](https://dead-strike.com/sniper-shot-3d/): Clean browser sniper route for rooftop sightlines and one-shot focus.
+- [Urban Sniper Multiplayer](https://dead-strike.com/urban-sniper-multiplayer/): Multiplayer sniper page for urban overwatch and rooftop PvP.
+
+## Round-Two Zombie Defense
+
+- [Zombie defense: War Z Survival](https://dead-strike.com/zombie-defense-war-z-survival/): Zombie defense page focused on barricades, wave pressure, and hold-the-line survival.
+- [Zombie Defense: Last Stand](https://dead-strike.com/zombie-defense-last-stand/): Last-stand zombie route built around fortify-until-dawn pressure.
+- [Grand Zombie Swarm](https://dead-strike.com/grand-zombie-swarm/): Horde-control zombie defense page centered on crowd pressure and perimeter survival.
+- [Zombie Vacation 2](https://dead-strike.com/zombie-vacation-2/): Zombie defense page set in an abandoned holiday zone with resort-siege pacing.
+- [Zombie Shooter 3D](https://dead-strike.com/zombie-shooter-3d/): Fast browser zombie shooter page for direct run-and-gun sessions.
+- [Zombie Survival Pixel Apocalypse](https://dead-strike.com/zombie-survival-pixel-apocalypse/): Pixel zombie action page for retro survival intent and quick browser sessions.
+- [Pixel multiplayer survival zombie](https://dead-strike.com/pixel-multiplayer-survival-zombie/): Pixel multiplayer zombie page mixing survival pressure with browser co-op intent.
+
+## Related Legacy Pages
 
 - [Zombie Survival : Last Stand](https://dead-strike.com/zombie-survival-last-stand/): Browser zombie survival game page for users comparing Dead Strike with other undead shooters.
 - [Challenge the Zombies](https://dead-strike.com/challenge-the-zombies/): Browser action page centered on zombie combat and wave-based pressure.
@@ -22,6 +60,9 @@
 
 - Primary entity: Dead Strike, a browser-playable zombie FPS
 - Core user intent: play online without download
-- Main themes: zombie waves, first-person shooting, weapon unlocks, instant browser access
-- Supporting navigation: zombie, FPS, and shooter hubs
+- Main themes: zombie waves, first-person shooting, weapon unlocks, instant browser access, related shooter discovery
+- Supporting navigation: zombie, FPS, and shooter hubs plus tactical FPS, sniper, multiplayer arena, and zombie-defense detail clusters
+- Best canonical page for exact-match Dead Strike intent: https://dead-strike.com/
+- Best page for broad catalog discovery: https://dead-strike.com/games/
+- Canonical sitemap: https://dead-strike.com/sitemap.xml
 - Website: https://dead-strike.com/

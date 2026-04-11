@@ -11,6 +11,7 @@ if str(TOOLS_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLS_DIR))
 
 from library_utils import load_library
+from seo_geo_utils import render_detail_schema_block
 
 
 TARGET_RELEASE_GROUP = "expansion-2026-04"
@@ -463,6 +464,13 @@ def render_page(entry: dict, context: RenderContext) -> str:
     )
     article_grid = render_article_grid(copy_bits)
     score = strip_leading_article(copy_bits["scene_label"]).title()
+    schema_block = render_detail_schema_block(
+        entry,
+        context.library,
+        canonical_url=canonical,
+        description=copy_bits["meta_description"],
+        image_url=entry["thumb"],
+    )
 
     return f"""<!DOCTYPE html>
 
@@ -500,6 +508,7 @@ def render_page(entry: dict, context: RenderContext) -> str:
       gtag("js", new Date());
       gtag("config", "{GA_ID}");
     </script>
+{schema_block}
 </head>
 <body>
 <div aria-hidden="true" class="backdrop-grid"></div>
