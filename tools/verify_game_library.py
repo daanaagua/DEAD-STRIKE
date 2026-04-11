@@ -151,6 +151,10 @@ REQUIRED_NEW_SLUGS = [
     "lone-wolf-strike",
 ]
 
+ROUND_TWO_PHASE_STAGED = "staged"
+ROUND_TWO_PHASE_LIVE = "live"
+ROUND_TWO_PHASE_MIXED = "mixed"
+
 
 def validate_game(game: dict, slug_set: set[str], errors: list[str]) -> None:
     for field in REQUIRED_FIELDS:
@@ -350,7 +354,21 @@ def validate_canonical_targets(games: list[dict], errors: list[str]) -> None:
             )
 
 
-def validate_category_page_live_targets(category_pages: dict, games: list[dict], errors: list[str]) -> None:
+def detect_round_two_phase(round_two_games: list[dict]) -> str:
+    live_flags = {bool(game.get("isLive")) for game in round_two_games}
+    if live_flags == {False}:
+        return ROUND_TWO_PHASE_STAGED
+    if live_flags == {True}:
+        return ROUND_TWO_PHASE_LIVE
+    return ROUND_TWO_PHASE_MIXED
+
+
+def validate_category_page_live_targets(
+    category_pages: dict,
+    games: list[dict],
+    round_two_phase: str,
+    errors: list[str],
+) -> None:
     if not isinstance(category_pages, dict):
         return
 
@@ -381,6 +399,9 @@ def validate_category_page_live_targets(category_pages: dict, games: list[dict],
             if slug not in ROUND_TWO_EXPECTED_SLUG_SET:
                 errors.append(f"categoryPages['{page_name}'] slug '{slug}' is not an approved round-two staged slug")
 
+        if round_two_phase != ROUND_TWO_PHASE_STAGED:
+            continue
+
         if seen_staged_slugs != expected_staged_slugs:
             errors.append(
                 f"categoryPages['{page_name}'] staged round-two slugs must match Task 3 spec order exactly: "
@@ -388,7 +409,7 @@ def validate_category_page_live_targets(category_pages: dict, games: list[dict],
             )
 
 
-def validate_round_two_inventory(games: list[dict], errors: list[str]) -> None:
+def validate_round_two_inventory(games: list[dict], errors: list[str]) -> str:
     round_two_games = [
         game
         for game in games
@@ -412,11 +433,15 @@ def validate_round_two_inventory(games: list[dict], errors: list[str]) -> None:
         detail_text = "; ".join(details) if details else "set mismatch"
         errors.append(f"Round-two slug set must match approved manifest: {detail_text}")
 
-    live_round_two = [game.get("slug") for game in round_two_games if game.get("isLive")]
-    if live_round_two:
+    round_two_phase = detect_round_two_phase(round_two_games)
+    if round_two_phase == ROUND_TWO_PHASE_MIXED:
+        live_round_two = sorted(game.get("slug") for game in round_two_games if game.get("isLive"))
+        staged_round_two = sorted(game.get("slug") for game in round_two_games if not game.get("isLive"))
         errors.append(
-            f"Round-two games must stay staged with isLive=false, found live slugs: {', '.join(sorted(live_round_two))}"
+            "Round-two games must be consistently staged or live; mixed state found with "
+            f"live slugs: {', '.join(live_round_two)}; staged slugs: {', '.join(staged_round_two)}"
         )
+    return round_two_phase
 
 
 def dedupe_live_games(slugs: list[str], games_by_slug: dict[str, dict], exclude_canonical_slugs: set[str], limit: int) -> list[dict]:
@@ -588,9 +613,9 @@ def main() -> int:
     validate_render_rules(library, errors)
     validate_canonical_targets(games, errors)
     validate_required_inventory(slug_set, errors)
-    validate_round_two_inventory(games, errors)
+    round_two_phase = validate_round_two_inventory(games, errors)
     validate_category_pages(library.get("categoryPages"), slug_set, errors)
-    validate_category_page_live_targets(library.get("categoryPages"), games, errors)
+    validate_category_page_live_targets(library.get("categoryPages"), games, round_two_phase, errors)
     validate_live_files(Path(args.library).resolve().parent, games, errors)
     validate_derived_recommendations(library, games, errors)
 

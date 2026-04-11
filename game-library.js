@@ -862,7 +862,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "special-forces-war-zombie-attack",
         "call-of-ops-3-zombies"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "infantry-attack-battle-3d-fps",
@@ -885,7 +885,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "special-forces-war-zombie-attack",
         "call-of-ops-3-zombies"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "duty-call-modern-warfate-2",
@@ -908,7 +908,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "special-forces-war-zombie-attack",
         "call-of-ops-3-zombies"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "command-strike-fps-2",
@@ -931,7 +931,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "special-forces-war-zombie-attack",
         "call-of-ops-3-zombies"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "cod-duty-call-fps",
@@ -954,7 +954,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "special-forces-war-zombie-attack",
         "call-of-ops-3-zombies"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "special-forces-war-zombie-attack",
@@ -977,7 +977,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "cod-duty-call-fps",
         "call-of-ops-3-zombies"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "shooterz-io",
@@ -1000,7 +1000,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "battledudes-io",
         "subway-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "blocky-siege",
@@ -1023,7 +1023,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "battledudes-io",
         "subway-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "moon-clash-heroes",
@@ -1046,7 +1046,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "battledudes-io",
         "subway-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "nightwalkers-io",
@@ -1069,7 +1069,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "battledudes-io",
         "subway-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "combat-zombie-warfare",
@@ -1092,7 +1092,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "battledudes-io",
         "subway-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "sniper-mission-war",
@@ -1115,7 +1115,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "counter-craft-sniper",
         "sniper-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "sniper-ghost-shooter",
@@ -1138,7 +1138,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "counter-craft-sniper",
         "sniper-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "sniper-shot-3d",
@@ -1161,7 +1161,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "counter-craft-sniper",
         "sniper-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "urban-sniper-multiplayer",
@@ -1184,7 +1184,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "counter-craft-sniper",
         "sniper-clash-3d"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "zombie-defense-war-z-survival",
@@ -1207,7 +1207,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "biozombie-outbreak",
         "dead-strike"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "zombie-defense-last-stand",
@@ -1230,7 +1230,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "biozombie-outbreak",
         "dead-strike"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "grand-zombie-swarm",
@@ -1253,7 +1253,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "biozombie-outbreak",
         "dead-strike"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "zombie-vacation-2",
@@ -1276,7 +1276,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "biozombie-outbreak",
         "dead-strike"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "zombie-shooter-3d",
@@ -1299,7 +1299,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "zombie-survival-last-stand",
         "dead-strike"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "zombie-survival-pixel-apocalypse",
@@ -1322,7 +1322,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "zombie-survival-last-stand",
         "dead-strike"
       ],
-      "isLive": false
+      "isLive": true
     },
     {
       "slug": "pixel-multiplayer-survival-zombie",
@@ -1345,7 +1345,7 @@ window.DEAD_STRIKE_LIBRARY = {
         "zombie-survival-last-stand",
         "dead-strike"
       ],
-      "isLive": false
+      "isLive": true
     }
   ],
   "pools": {
