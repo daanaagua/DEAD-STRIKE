@@ -363,6 +363,19 @@ def detect_round_two_phase(round_two_games: list[dict]) -> str:
     return ROUND_TWO_PHASE_MIXED
 
 
+def extract_round_two_category_slugs(page_name: str, slugs: list[str], games_by_slug: dict[str, dict], errors: list[str]) -> list[str]:
+    round_two_slugs: list[str] = []
+    for slug in slugs:
+        game = games_by_slug.get(slug)
+        if not game or game.get("releaseGroup") != ROUND_TWO_RELEASE_GROUP:
+            continue
+        if slug not in ROUND_TWO_EXPECTED_SLUG_SET:
+            errors.append(f"categoryPages['{page_name}'] slug '{slug}' is not an approved round-two slug")
+            continue
+        round_two_slugs.append(slug)
+    return round_two_slugs
+
+
 def validate_category_page_live_targets(
     category_pages: dict,
     games: list[dict],
@@ -382,31 +395,35 @@ def validate_category_page_live_targets(
         if not isinstance(slugs, list):
             continue
 
-        expected_staged_slugs = list(ROUND_TWO_ALLOWED_STAGE_SLUGS_BY_CATEGORY_PAGE.get(page_name, ()))
-        seen_staged_slugs: list[str] = []
+        expected_round_two_slugs = list(ROUND_TWO_ALLOWED_STAGE_SLUGS_BY_CATEGORY_PAGE.get(page_name, ()))
+        seen_round_two_slugs = extract_round_two_category_slugs(page_name, slugs, games_by_slug, errors)
+
+        if seen_round_two_slugs != expected_round_two_slugs:
+            errors.append(
+                f"categoryPages['{page_name}'] round-two slugs must match approved order exactly: "
+                f"expected {expected_round_two_slugs}, found {seen_round_two_slugs}"
+            )
+
+        expected_live = round_two_phase == ROUND_TWO_PHASE_LIVE
+        for slug in seen_round_two_slugs:
+            game = games_by_slug.get(slug)
+            if not game:
+                continue
+            if bool(game.get("isLive")) is not expected_live:
+                phase_label = "live" if expected_live else "staged"
+                errors.append(
+                    f"categoryPages['{page_name}'] round-two slug '{slug}' must be {phase_label} in {round_two_phase} phase"
+                )
 
         for slug in slugs:
             game = games_by_slug.get(slug)
             if not game:
                 continue
+            if game.get("releaseGroup") == ROUND_TWO_RELEASE_GROUP:
+                continue
             if game.get("isLive"):
                 continue
-            if game.get("releaseGroup") != ROUND_TWO_RELEASE_GROUP:
-                errors.append(f"categoryPages['{page_name}'] slug '{slug}' must point to a live game")
-                continue
-
-            seen_staged_slugs.append(slug)
-            if slug not in ROUND_TWO_EXPECTED_SLUG_SET:
-                errors.append(f"categoryPages['{page_name}'] slug '{slug}' is not an approved round-two staged slug")
-
-        if round_two_phase != ROUND_TWO_PHASE_STAGED:
-            continue
-
-        if seen_staged_slugs != expected_staged_slugs:
-            errors.append(
-                f"categoryPages['{page_name}'] staged round-two slugs must match Task 3 spec order exactly: "
-                f"expected {expected_staged_slugs}, found {seen_staged_slugs}"
-            )
+            errors.append(f"categoryPages['{page_name}'] slug '{slug}' must point to a live game")
 
 
 def validate_round_two_inventory(games: list[dict], errors: list[str]) -> str:

@@ -102,7 +102,7 @@ GROUP_PROFILES = {
         "subtitle": "{title} favors direct firefights, short objective loops, and a military lane that stays readable from drop-in to reload.",
         "compat": "{title} plays best in fullscreen when {scene} opens into longer sightlines. Use the source tab for the cleanest load, then pivot into more tactical missions from the icon walls.",
         "article_one_title": "Compact firefights shaped by {scene_label}",
-        "article_one_body": "This page leans on mission pressure rather than wandering downtime. {tempo_cap} keeps every reload meaningful, while {intent} gives the run a clear commando angle from the opening push onward.",
+        "article_one_body": "This page leans on mission pressure rather than wandering downtime. Pace: {tempo_label}. The page stays rooted in {intent}, so the firefight keeps a clear commando angle from the opening push onward.",
         "article_two_title": "Built for players who want military tempo without menu friction",
         "article_two_body": "The loop suits players chasing clean browser restarts, familiar assault controls, and a shooter lane that gets to the firefight quickly instead of padding the setup.",
         "highlights_title": "Mission rhythm",
@@ -118,7 +118,7 @@ GROUP_PROFILES = {
         "subtitle": "{title} puts match flow first, keeping browser-ready firefights centered on duels, flanks, and quick respawn energy.",
         "compat": "{title} works best in fullscreen when {scene} turns into a busy lane fight. Open the source tab if you want the cleanest session handoff, then hop through more arena picks from the icon walls.",
         "article_one_title": "Fast match loops built around {scene_label}",
-        "article_one_body": "The best part here is how quickly the action starts. {tempo_cap} drives every exchange, and {intent} keeps the page feeling like a live arena queue instead of a slow campaign map.",
+        "article_one_body": "The best part here is how quickly the action starts. Pace: {tempo_label}. The page stays rooted in {intent}, so it feels like a live arena queue instead of a slow campaign map.",
         "article_two_title": "A wider PvP branch for players who want instant rematches",
         "article_two_body": "This entry broadens the site's shooter mix with lighter setup, more repeatable rounds, and a stronger focus on positioning, peeking, and out-trading human opponents.",
         "highlights_title": "Arena loop",
@@ -134,7 +134,7 @@ GROUP_PROFILES = {
         "subtitle": "{title} slows the pace just enough to reward angles, patience, and clean shots while still staying browser-session friendly.",
         "compat": "{title} benefits from fullscreen when {scene} stretches your sightlines. Use the source tab for the cleanest launch, then move into more precision-heavy sniper picks from the icon walls.",
         "article_one_title": "Precision pressure framed by {scene_label}",
-        "article_one_body": "The appeal here is how much space each shot gets. {tempo_cap} sharpens the pacing, while {intent} keeps the page rooted in deliberate marksman play instead of spray-heavy firefights.",
+        "article_one_body": "The appeal here is how much space each shot gets. Pace: {tempo_label}. The page stays rooted in {intent}, not spray-heavy firefights.",
         "article_two_title": "A better fit for players who enjoy setup, timing, and payoff",
         "article_two_body": "This branch gives DEAD STRIKE a calmer but sharper lane, trading raw crowd control for angle management, cleaner picks, and browser-friendly mission resets.",
         "highlights_title": "Marksman loop",
@@ -150,7 +150,7 @@ GROUP_PROFILES = {
         "subtitle": "{title} leans into barricades, survival pressure, and repeated holdout moments that fit short browser sessions well.",
         "compat": "{title} feels best in fullscreen when {scene} fills with a larger horde. Open the source tab for the cleanest load, then rotate into more undead defense pages from the icon walls.",
         "article_one_title": "Wave pressure anchored in {scene_label}",
-        "article_one_body": "This page sells the feeling of holding one more line against the undead. {tempo_cap} keeps the threat climbing, and {intent} pushes every session toward fortify-or-fall tension.",
+        "article_one_body": "This page sells the feeling of holding one more line against the undead. Pace: {tempo_label}. The loop leans on {intent}, keeping every session close to fortify-or-fall tension.",
         "article_two_title": "A stronger holdout branch for players who like pressure over wandering",
         "article_two_body": "Instead of roaming too wide, the page keeps the loop tight: defend space, stabilize the lane, and see how long the setup can survive the next spike in undead pressure.",
         "highlights_title": "Holdout loop",
@@ -166,7 +166,7 @@ GROUP_PROFILES = {
         "subtitle": "{title} sits slightly outside the core branches, giving the site a more flexible zombie-action lane without losing immediate browser access.",
         "compat": "{title} is easiest to read in fullscreen when {scene} starts to crowd the play space. Use the source tab for the cleanest load, then branch into more zombie-action picks from the icon walls.",
         "article_one_title": "Straight-ahead zombie action from {scene_label}",
-        "article_one_body": "This page is about momentum and readability. {tempo_cap} keeps the session moving, while {intent} gives the run a clearer flavor than a generic undead shooter clone.",
+        "article_one_body": "This page is about momentum and readability. Pace: {tempo_label}. The page stays rooted in {intent}, giving the run a clearer flavor than a generic undead shooter clone.",
         "article_two_title": "Useful long-tail coverage for players who want variety without friction",
         "article_two_body": "These pages widen the catalog with alternate tones like pixel survival, direct 3D blasting, or multiplayer scavenging, while still fitting the site's overall shooter lane.",
         "highlights_title": "Action loop",
@@ -188,6 +188,14 @@ def title_case_token(value: str) -> str:
 
 def humanize(mapping: dict[str, str], key: str) -> str:
     return mapping.get(key, sentence_case_token(key))
+
+
+def strip_leading_article(value: str) -> str:
+    lowered = value.lower()
+    for prefix in ("an ", "a "):
+        if lowered.startswith(prefix):
+            return value[len(prefix):]
+    return value
 
 
 def dedupe_preserve(values: list[str]) -> list[str]:
@@ -355,14 +363,13 @@ def build_copy(entry: dict) -> dict:
     tempo_label = humanize(TEMPO_TEXT, entry["copySeed"]["tempo"])
     scene_label = humanize(SCENE_TEXT, entry["copySeed"]["scene"])
     intent_label = humanize(INTENT_TEXT, entry["copySeed"]["intent"])
-    tempo_cap = tempo_label[0].upper() + tempo_label[1:]
     scene_cap = scene_label[0].upper() + scene_label[1:]
     categories = [title_case_token(value) for value in entry.get("categories", [])]
 
     highlight_items = [
-        f"{scene_cap} gives the match a more distinct backdrop than a generic browser shooter.",
-        f"{tempo_cap} keeps the session readable for short play windows and quick re-queues.",
-        f"{intent_label.capitalize()} helps this entry stand apart inside the {profile['group_label']} lane.",
+        f"Backdrop: {scene_cap}.",
+        f"Pace: {tempo_label}.",
+        f"The page stays rooted in {intent_label}, which helps it stand apart inside the {profile['group_label']} lane.",
         f"Category fit: {', '.join(categories[:3])}." if categories else "Category fit: Shooter.",
     ]
     return {
@@ -386,7 +393,7 @@ def build_copy(entry: dict) -> dict:
         ),
         "article_one_title": profile["article_one_title"].format(scene_label=scene_label),
         "article_one_body": profile["article_one_body"].format(
-            tempo_cap=tempo_cap,
+            tempo_label=tempo_label,
             intent=intent_label,
         ),
         "article_two_title": profile["article_two_title"],
@@ -455,7 +462,7 @@ def render_page(entry: dict, context: RenderContext) -> str:
         "New Games icon wall",
     )
     article_grid = render_article_grid(copy_bits)
-    score = copy_bits["scene_label"].replace("a ", "").replace("an ", "").title()
+    score = strip_leading_article(copy_bits["scene_label"]).title()
 
     return f"""<!DOCTYPE html>
 
