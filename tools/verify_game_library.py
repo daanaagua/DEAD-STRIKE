@@ -41,6 +41,56 @@ FALLBACK_MINIMUMS = {
 
 ROUND_TWO_RELEASE_GROUP = "expansion-2026-04"
 ROUND_TWO_EXPECTED = 22
+ROUND_TWO_EXPECTED_SLUGS = (
+    "fps-shooting-game-3d-gun-game",
+    "infantry-attack-battle-3d-fps",
+    "duty-call-modern-warfate-2",
+    "command-strike-fps-2",
+    "cod-duty-call-fps",
+    "special-forces-war-zombie-attack",
+    "shooterz-io",
+    "blocky-siege",
+    "moon-clash-heroes",
+    "nightwalkers-io",
+    "combat-zombie-warfare",
+    "sniper-mission-war",
+    "sniper-ghost-shooter",
+    "sniper-shot-3d",
+    "urban-sniper-multiplayer",
+    "zombie-defense-war-z-survival",
+    "zombie-defense-last-stand",
+    "grand-zombie-swarm",
+    "zombie-vacation-2",
+    "zombie-shooter-3d",
+    "zombie-survival-pixel-apocalypse",
+    "pixel-multiplayer-survival-zombie",
+)
+ROUND_TWO_EXPECTED_SLUG_SET = frozenset(ROUND_TWO_EXPECTED_SLUGS)
+ROUND_TWO_ALLOWED_STAGE_SLUGS_BY_CATEGORY_PAGE = {
+    "zombie-games": (
+        "special-forces-war-zombie-attack",
+        "nightwalkers-io",
+        "combat-zombie-warfare",
+        "zombie-defense-war-z-survival",
+        "zombie-defense-last-stand",
+        "grand-zombie-swarm",
+        "zombie-vacation-2",
+        "zombie-shooter-3d",
+        "zombie-survival-pixel-apocalypse",
+        "pixel-multiplayer-survival-zombie",
+    ),
+    "fps-games": (
+        "fps-shooting-game-3d-gun-game",
+        "infantry-attack-battle-3d-fps",
+        "duty-call-modern-warfate-2",
+        "command-strike-fps-2",
+        "cod-duty-call-fps",
+        "shooterz-io",
+        "blocky-siege",
+        "sniper-mission-war",
+    ),
+    "shooter-games": ROUND_TWO_EXPECTED_SLUGS,
+}
 
 REPRESENTATIVE_PAGE_SLUGS = [
     "dead-strike",
@@ -314,16 +364,28 @@ def validate_category_page_live_targets(category_pages: dict, games: list[dict],
         if not isinstance(slugs, list):
             continue
 
+        expected_staged_slugs = list(ROUND_TWO_ALLOWED_STAGE_SLUGS_BY_CATEGORY_PAGE.get(page_name, ()))
+        seen_staged_slugs: list[str] = []
+
         for slug in slugs:
             game = games_by_slug.get(slug)
             if not game:
                 continue
             if game.get("isLive"):
                 continue
-            if game.get("releaseGroup") == ROUND_TWO_RELEASE_GROUP:
-                continue
-            if not game.get("isLive"):
+            if game.get("releaseGroup") != ROUND_TWO_RELEASE_GROUP:
                 errors.append(f"categoryPages['{page_name}'] slug '{slug}' must point to a live game")
+                continue
+
+            seen_staged_slugs.append(slug)
+            if slug not in ROUND_TWO_EXPECTED_SLUG_SET:
+                errors.append(f"categoryPages['{page_name}'] slug '{slug}' is not an approved round-two staged slug")
+
+        if seen_staged_slugs != expected_staged_slugs:
+            errors.append(
+                f"categoryPages['{page_name}'] staged round-two slugs must match Task 3 spec order exactly: "
+                f"expected {expected_staged_slugs}, found {seen_staged_slugs}"
+            )
 
 
 def validate_round_two_inventory(games: list[dict], errors: list[str]) -> None:
@@ -337,6 +399,18 @@ def validate_round_two_inventory(games: list[dict], errors: list[str]) -> None:
         errors.append(
             f"Expected {ROUND_TWO_EXPECTED} round-two games in releaseGroup '{ROUND_TWO_RELEASE_GROUP}', found {len(round_two_games)}"
         )
+
+    round_two_slugs = {game.get("slug") for game in round_two_games if isinstance(game.get("slug"), str)}
+    if round_two_slugs != ROUND_TWO_EXPECTED_SLUG_SET:
+        missing_slugs = sorted(ROUND_TWO_EXPECTED_SLUG_SET - round_two_slugs)
+        unexpected_slugs = sorted(round_two_slugs - ROUND_TWO_EXPECTED_SLUG_SET)
+        details: list[str] = []
+        if missing_slugs:
+            details.append(f"missing {missing_slugs}")
+        if unexpected_slugs:
+            details.append(f"unexpected {unexpected_slugs}")
+        detail_text = "; ".join(details) if details else "set mismatch"
+        errors.append(f"Round-two slug set must match approved manifest: {detail_text}")
 
     live_round_two = [game.get("slug") for game in round_two_games if game.get("isLive")]
     if live_round_two:
