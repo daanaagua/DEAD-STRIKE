@@ -1,0 +1,318 @@
+{
+  "primary": [
+    {
+      "title": "FPS Shooting Game: 3D Gun Game",
+      "slug": "fps-shooting-game-3d-gun-game",
+      "group": "tactical-fps",
+      "sourcePage": "https://gamemonetize.com/fps-shooting-game-3d-gun-game-game",
+      "categories": ["fps", "shooter", "military", "tactical"],
+      "copySeed": {
+        "tempo": "fast-rush",
+        "scene": "urban-warzone",
+        "intent": "modern-commando"
+      }
+    },
+    {
+      "title": "Infantry Attack:Battle 3D FPS",
+      "slug": "infantry-attack-battle-3d-fps",
+      "group": "tactical-fps",
+      "sourcePage": "https://gamemonetize.com/infantry-attack-battle-3d-fps-game",
+      "categories": ["fps", "battle", "assault", "squad"],
+      "copySeed": {
+        "tempo": "frontline-push",
+        "scene": "fortified-checkpoint",
+        "intent": "infantry-breakthrough"
+      }
+    },
+    {
+      "title": "Duty Call Modern Warfate 2",
+      "slug": "duty-call-modern-warfate-2",
+      "group": "tactical-fps",
+      "sourcePage": "https://gamemonetize.com/duty-call-modern-warfate-2-game",
+      "categories": ["fps", "military", "campaign", "modern-war"],
+      "copySeed": {
+        "tempo": "mission-surge",
+        "scene": "modern-battlefield",
+        "intent": "special-ops-patrol"
+      }
+    },
+    {
+      "title": "Command Strike FPS 2",
+      "slug": "command-strike-fps-2",
+      "group": "tactical-fps",
+      "sourcePage": "https://gamemonetize.com/command-strike-fps-2-game",
+      "categories": ["fps", "command", "strike", "counterforce"],
+      "copySeed": {
+        "tempo": "breach-and-clear",
+        "scene": "industrial-complex",
+        "intent": "command-unit-raider"
+      }
+    },
+    {
+      "title": "COD Duty Call FPS",
+      "slug": "cod-duty-call-fps",
+      "group": "tactical-fps",
+      "sourcePage": "https://gamemonetize.com/cod-duty-call-fps-game",
+      "categories": ["fps", "combat", "guns", "mission"],
+      "copySeed": {
+        "tempo": "combat-sprint",
+        "scene": "enemy-stronghold",
+        "intent": "loadout-driven-shooter"
+      }
+    },
+    {
+      "title": "Special Forces War Zombie Attack",
+      "slug": "special-forces-war-zombie-attack",
+      "group": "tactical-fps",
+      "sourcePage": "https://gamemonetize.com/special-forces-war-zombie-attack-game",
+      "categories": ["fps", "special-forces", "zombie", "survival"],
+      "copySeed": {
+        "tempo": "panic-firefight",
+        "scene": "infected-warzone",
+        "intent": "elite-zombie-suppression"
+      }
+    },
+    {
+      "title": "ShooterZ.io",
+      "slug": "shooterz-io",
+      "group": "multiplayer-arena",
+      "sourcePage": "https://gamemonetize.com/shooterz-io-game",
+      "categories": ["multiplayer", "arena", "io", "shooter"],
+      "copySeed": {
+        "tempo": "live-match-loop",
+        "scene": "open-killbox",
+        "intent": "drop-in-arena-duel"
+      }
+    },
+    {
+      "title": "Blocky Siege",
+      "slug": "blocky-siege",
+      "group": "multiplayer-arena",
+      "sourcePage": "https://gamemonetize.com/blocky-siege-game",
+      "categories": ["multiplayer", "blocky", "arena", "pvp"],
+      "copySeed": {
+        "tempo": "flank-and-peek",
+        "scene": "voxel-battle-lanes",
+        "intent": "block-style-teamfight"
+      }
+    },
+    {
+      "title": "Moon Clash Heroes",
+      "slug": "moon-clash-heroes",
+      "group": "multiplayer-arena",
+      "sourcePage": "https://gamemonetize.com/moon-clash-heroes-game",
+      "categories": ["multiplayer", "heroes", "arena", "sci-fi"],
+      "copySeed": {
+        "tempo": "jetpack-skirmish",
+        "scene": "lunar-outpost",
+        "intent": "hero-shooter-showdown"
+      }
+    },
+    {
+      "title": "Nightwalkers.io",
+      "slug": "nightwalkers-io",
+      "group": "multiplayer-arena",
+      "sourcePage": "https://gamemonetize.com/nightwalkers-io-game",
+      "categories": ["multiplayer", "io", "survival", "night-battle"],
+      "copySeed": {
+        "tempo": "after-dark-scramble",
+        "scene": "haunted-streets",
+        "intent": "survive-online-chaos"
+      }
+    },
+    {
+      "title": "Combat Zombie Warfare",
+      "slug": "combat-zombie-warfare",
+      "group": "multiplayer-arena",
+      "sourcePage": "https://gamemonetize.com/combat-zombie-warfare-game",
+      "categories": ["multiplayer", "zombie", "arena", "co-op"],
+      "copySeed": {
+        "tempo": "horde-crossfire",
+        "scene": "ruined-combat-zone",
+        "intent": "squad-vs-undead-match"
+      }
+    },
+    {
+      "title": "Sniper Mission War",
+      "slug": "sniper-mission-war",
+      "group": "sniper",
+      "sourcePage": "https://gamemonetize.com/sniper-mission-war-game",
+      "categories": ["sniper", "precision", "warfare", "mission"],
+      "copySeed": {
+        "tempo": "patient-trigger",
+        "scene": "battlefield-overwatch",
+        "intent": "mission-based-marksmanship"
+      }
+    },
+    {
+      "title": "Sniper Ghost Shooter",
+      "slug": "sniper-ghost-shooter",
+      "group": "sniper",
+      "sourcePage": "https://gamemonetize.com/sniper-ghost-shooter-game",
+      "categories": ["sniper", "stealth", "ghost", "elimination"],
+      "copySeed": {
+        "tempo": "silent-takedown",
+        "scene": "shadowy-ruins",
+        "intent": "stealth-assassin-vantage"
+      }
+    },
+    {
+      "title": "Sniper Shot 3D",
+      "slug": "sniper-shot-3d",
+      "group": "sniper",
+      "sourcePage": "https://gamemonetize.com/sniper-shot-3d-game",
+      "categories": ["sniper", "3d", "aim", "precision"],
+      "copySeed": {
+        "tempo": "steady-breath",
+        "scene": "rooftop-range",
+        "intent": "clean-one-shot-focus"
+      }
+    },
+    {
+      "title": "Urban Sniper Multiplayer",
+      "slug": "urban-sniper-multiplayer",
+      "group": "sniper",
+      "sourcePage": "https://gamemonetize.com/urban-sniper-multiplayer-game",
+      "categories": ["sniper", "multiplayer", "urban", "pvp"],
+      "copySeed": {
+        "tempo": "lane-lock-duel",
+        "scene": "city-skyline",
+        "intent": "urban-overwatch-pvp"
+      }
+    },
+    {
+      "title": "Zombie defense: War Z Survival",
+      "slug": "zombie-defense-war-z-survival",
+      "group": "zombie-defense",
+      "sourcePage": "https://gamemonetize.com/zombie-defense-war-z-survival-game",
+      "categories": ["zombie", "defense", "survival", "base-defense"],
+      "copySeed": {
+        "tempo": "wave-holdout",
+        "scene": "barricaded-base",
+        "intent": "last-line-defense"
+      }
+    },
+    {
+      "title": "Zombie Defense: Last Stand",
+      "slug": "zombie-defense-last-stand",
+      "group": "zombie-defense",
+      "sourcePage": "https://gamemonetize.com/zombie-defense-last-stand-game",
+      "categories": ["zombie", "defense", "last-stand", "apocalypse"],
+      "copySeed": {
+        "tempo": "pressure-escalation",
+        "scene": "collapsed-outpost",
+        "intent": "fortify-until-dawn"
+      }
+    },
+    {
+      "title": "Grand Zombie Swarm",
+      "slug": "grand-zombie-swarm",
+      "group": "zombie-defense",
+      "sourcePage": "https://gamemonetize.com/grand-zombie-swarm-game",
+      "categories": ["zombie", "swarm", "defense", "horde"],
+      "copySeed": {
+        "tempo": "mass-horde-crush",
+        "scene": "city-perimeter",
+        "intent": "crowd-control-survivor"
+      }
+    },
+    {
+      "title": "Zombie Vacation 2",
+      "slug": "zombie-vacation-2",
+      "group": "zombie-defense",
+      "sourcePage": "https://gamemonetize.com/zombie-vacation-2-game",
+      "categories": ["zombie", "survival", "vacation", "defense"],
+      "copySeed": {
+        "tempo": "resort-siege",
+        "scene": "abandoned-holiday-zone",
+        "intent": "vacation-nightmare-defense"
+      }
+    },
+    {
+      "title": "Zombie Shooter 3D",
+      "slug": "zombie-shooter-3d",
+      "group": "adjacent-long-tail",
+      "sourcePage": "https://gamemonetize.com/zombie-shooter-3d-game",
+      "categories": ["zombie", "shooter", "3d", "action"],
+      "copySeed": {
+        "tempo": "run-and-gun",
+        "scene": "infected-corridor",
+        "intent": "straight-ahead-zombie-blast"
+      }
+    },
+    {
+      "title": "Zombie Survival Pixel Apocalypse",
+      "slug": "zombie-survival-pixel-apocalypse",
+      "group": "adjacent-long-tail",
+      "sourcePage": "https://gamemonetize.com/zombie-survival-pixel-apocalypse-game",
+      "categories": ["zombie", "pixel", "survival", "apocalypse"],
+      "copySeed": {
+        "tempo": "scrappy-survival",
+        "scene": "pixel-doomsday-town",
+        "intent": "retro-undead-endurance"
+      }
+    },
+    {
+      "title": "Pixel multiplayer survival zombie",
+      "slug": "pixel-multiplayer-survival-zombie",
+      "group": "adjacent-long-tail",
+      "sourcePage": "https://gamemonetize.com/pixel-multiplayer-survival-zombie-game",
+      "categories": ["pixel", "multiplayer", "zombie", "survival"],
+      "copySeed": {
+        "tempo": "online-scavenge",
+        "scene": "blocky-wasteland",
+        "intent": "pixel-coop-undead-survival"
+      }
+    }
+  ],
+  "backup": [
+    {
+      "title": "Counter Strike : Survival",
+      "slug": "counter-strike-survival",
+      "group": "reserve",
+      "sourcePage": "https://gamemonetize.com/counter-strike-survival-game",
+      "categories": ["fps", "survival", "reserve", "military"],
+      "copySeed": {
+        "tempo": "team-firefight",
+        "scene": "classic-war-map",
+        "intent": "fallback-counterstrike-clone"
+      }
+    },
+    {
+      "title": "3D Sniper Shooting Game",
+      "slug": "3d-sniper-shooting-game",
+      "group": "reserve",
+      "sourcePage": "https://gamemonetize.com/3d-sniper-shooting-game-game",
+      "categories": ["sniper", "3d", "reserve", "precision"],
+      "copySeed": {
+        "tempo": "measured-shot",
+        "scene": "reserve-watchtower",
+        "intent": "backup-sniper-angle"
+      }
+    },
+    {
+      "title": "Tank War Multiplayer",
+      "slug": "tank-war-multiplayer",
+      "group": "reserve",
+      "sourcePage": "https://gamemonetize.com/tank-war-multiplayer-game",
+      "categories": ["tank", "multiplayer", "reserve", "vehicle-combat"],
+      "copySeed": {
+        "tempo": "armor-clash",
+        "scene": "battlefield-open-ground",
+        "intent": "backup-heavy-firepower"
+      }
+    },
+    {
+      "title": "The Rise Of Zombies",
+      "slug": "the-rise-of-zombies",
+      "group": "reserve",
+      "sourcePage": "https://gamemonetize.com/the-rise-of-zombies-game",
+      "categories": ["zombie", "reserve", "survival", "action"],
+      "copySeed": {
+        "tempo": "outbreak-surge",
+        "scene": "fallen-city",
+        "intent": "backup-zombie-emergency"
+      }
+    }
+  ]
+}
