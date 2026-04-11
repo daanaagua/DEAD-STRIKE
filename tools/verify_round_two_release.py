@@ -8,6 +8,9 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE_FILE = ROOT / "tools" / "round_two_sources.json"
+EXPECTED_RELEASE_GROUP = "expansion-2026-04"
+EXPECTED_IFRAME_PREFIX = "https://html5.gamemonetize."
+EXPECTED_THUMB_PREFIX = "https://img.gamemonetize.com/"
 
 REQUIRED_ITEM_FIELDS = [
     "title",
@@ -473,12 +476,59 @@ def validate_source_payload(data: Any, errors: list[str]) -> None:
         validate_bucket(bucket_name, data.get(bucket_name), expected_items, errors)
 
 
+def validate_manifest_media_fields(bucket_name: str, item: Any, errors: list[str]) -> None:
+    if not isinstance(item, dict):
+        return
+
+    slug = item.get("slug")
+    slug_label = slug if isinstance(slug, str) and slug.strip() else format_value(slug)
+
+    iframe_url = item.get("iframeUrl")
+    if not isinstance(iframe_url, str) or not iframe_url.strip():
+        errors.append(f"{bucket_name} slug '{slug_label}' iframeUrl must be a non-empty string")
+    elif not iframe_url.startswith(EXPECTED_IFRAME_PREFIX):
+        errors.append(
+            f"{bucket_name} slug '{slug_label}' iframeUrl must start with '{EXPECTED_IFRAME_PREFIX}'"
+        )
+
+    thumb = item.get("thumb")
+    if not isinstance(thumb, str) or not thumb.strip():
+        errors.append(f"{bucket_name} slug '{slug_label}' thumb must be a non-empty string")
+    elif not thumb.startswith(EXPECTED_THUMB_PREFIX):
+        errors.append(
+            f"{bucket_name} slug '{slug_label}' thumb must start with '{EXPECTED_THUMB_PREFIX}'"
+        )
+
+
+def validate_manifest_payload(data: Any, errors: list[str]) -> None:
+    if not isinstance(data, dict):
+        errors.append("manifest payload must be a JSON object")
+        return
+
+    release_group = data.get("releaseGroup")
+    if release_group != EXPECTED_RELEASE_GROUP:
+        errors.append(
+            f"manifest releaseGroup expected {format_value(EXPECTED_RELEASE_GROUP)}, found {format_value(release_group)}"
+        )
+
+    for bucket_name, expected_items in EXPECTED_SOURCE_BINDINGS.items():
+        bucket = data.get(bucket_name)
+        validate_bucket(bucket_name, bucket, expected_items, errors)
+        if isinstance(bucket, list):
+            for item in bucket:
+                validate_manifest_media_fields(bucket_name, item, errors)
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--source-file",
         default=str(DEFAULT_SOURCE_FILE),
         help="Path to round-two frozen source JSON",
+    )
+    parser.add_argument(
+        "--manifest",
+        help="Path to round-two manifest JSON",
     )
     return parser.parse_args()
 
@@ -495,13 +545,28 @@ def main() -> int:
 
     validate_source_payload(data, errors)
 
+    if args.manifest:
+        try:
+            manifest_data = load_source_list(Path(args.manifest))
+        except Exception as exc:
+            print(f"ERROR: {exc}")
+            return 1
+
+        validate_manifest_payload(manifest_data, errors)
+
     if errors:
-        print("ROUND_TWO_SOURCE_LIST_VERIFICATION_FAILED")
+        if args.manifest:
+            print("ROUND_TWO_RELEASE_VERIFICATION_FAILED")
+        else:
+            print("ROUND_TWO_SOURCE_LIST_VERIFICATION_FAILED")
         for error in errors:
             print(f"- {error}")
         return 1
 
-    print("ROUND_TWO_SOURCE_LIST_VERIFIED")
+    if args.manifest:
+        print("ROUND_TWO_RELEASE_VERIFIED")
+    else:
+        print("ROUND_TWO_SOURCE_LIST_VERIFIED")
     return 0
 
 
