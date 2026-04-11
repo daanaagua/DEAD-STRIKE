@@ -70,12 +70,20 @@
 - [Terms of Use](https://dead-strike.com/terms/): Site-use terms covering static-page scope and third-party embed limits.
 - [Editorial Policy](https://dead-strike.com/editorial-policy/): Editorial standards for page selection, categorization, updates, and corrections.
 
+## Answer Pages
+
+- [Dead Strike Controls Guide](https://dead-strike.com/dead-strike-controls-guide/): Answer-first guide for core controls, movement rhythm, sprint timing, and browser setup.
+- [Dead Strike Tips](https://dead-strike.com/dead-strike-tips/): Strategy page focused on early waves, upgrade timing, and space management.
+- [Best Browser Zombie FPS Games](https://dead-strike.com/best-browser-zombie-fps-games/): Curated comparison of the site's strongest undead FPS routes.
+- [Best Sniper Browser Games](https://dead-strike.com/best-sniper-browser-games/): Precision-focused guide comparing sniper mission, PvP, and overwatch pages.
+- [Dead Strike vs Other Browser Zombie Games](https://dead-strike.com/dead-strike-vs-other-browser-zombie-games/): Comparison page showing when to choose Dead Strike and when a narrower zombie route fits better.
+
 ## Key Facts
 
 - Primary entity: Dead Strike, a browser-playable zombie FPS
 - Core user intent: play online without download
 - Main themes: zombie waves, first-person shooting, weapon unlocks, instant browser access, related shooter discovery
-- Supporting navigation: zombie, FPS, shooter, sniper, zombie-defense, and multiplayer-shooter hubs plus trust and policy pages
+- Supporting navigation: zombie, FPS, shooter, sniper, zombie-defense, multiplayer-shooter hubs, trust pages, and answer-first editorial guides
 - Best canonical page for exact-match Dead Strike intent: https://dead-strike.com/
 - Best page for broad catalog discovery: https://dead-strike.com/games/
 - Canonical sitemap: https://dead-strike.com/sitemap.xml

@@ -24,6 +24,7 @@ REQUIRED_LLMS_SECTIONS = [
     "## Round-Two Sniper",
     "## Round-Two Zombie Defense",
     "## Trust Pages",
+    "## Answer Pages",
     "## Key Facts",
 ]
 STATIC_PAGE_EXPECTATIONS = [
@@ -66,6 +67,31 @@ STATIC_PAGE_EXPECTATIONS = [
         "path": ROOT / "games" / "multiplayer-shooter-games" / "index.html",
         "canonical": "https://dead-strike.com/games/multiplayer-shooter-games/",
         "types": {"CollectionPage", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "dead-strike-controls-guide" / "index.html",
+        "canonical": "https://dead-strike.com/dead-strike-controls-guide/",
+        "types": {"Article", "BreadcrumbList", "FAQPage"},
+    },
+    {
+        "path": ROOT / "dead-strike-tips" / "index.html",
+        "canonical": "https://dead-strike.com/dead-strike-tips/",
+        "types": {"Article", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "best-browser-zombie-fps-games" / "index.html",
+        "canonical": "https://dead-strike.com/best-browser-zombie-fps-games/",
+        "types": {"Article", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "best-sniper-browser-games" / "index.html",
+        "canonical": "https://dead-strike.com/best-sniper-browser-games/",
+        "types": {"Article", "BreadcrumbList"},
+    },
+    {
+        "path": ROOT / "dead-strike-vs-other-browser-zombie-games" / "index.html",
+        "canonical": "https://dead-strike.com/dead-strike-vs-other-browser-zombie-games/",
+        "types": {"Article", "BreadcrumbList"},
     },
 ]
 TAG_PATTERN = re.compile(r"<(meta|link)\b[^>]*>", re.I)
